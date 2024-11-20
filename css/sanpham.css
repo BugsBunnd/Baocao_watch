@@ -1,0 +1,227 @@
+body {
+  background-color: wheat;
+}
+
+.container_sanpham .title {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.container_sanpham .title p {
+  font-size: 1.4rem;
+}
+
+.container_sanpham .add_sanpham {
+  max-width: 70%;
+  max-height: 0; /* Khởi tạo max-height là 0 */
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden; /* Đảm bảo không hiển thị phần tử bên ngoài */
+  transition: max-height 0.7s ease-in-out; /* Thêm hiệu ứng chuyển đổi cho max-height */
+  display: block; /* Giữ display là block để có thể chuyển đổi max-height */
+}
+
+.container_sanpham .table_danhmuc {
+  max-width: 80%;
+  height: auto;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.container_sanpham .title_table {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+/* table */
+.container_sanpham .table_sanpham table {
+  margin-top: 30px;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+.container_sanpham .table_sanpham th,
+td {
+  /* border: 1px solid gray; */
+  height: 50px;
+}
+
+.container_sanpham .table_sanpham tr:nth-child(even) {
+  background-color: #f2f2f2; /* Màu sáng */
+}
+
+.container_sanpham .table_sanpham tr:nth-child(odd) {
+  background-color: #ffffff; /* Màu trắng */
+}
+
+/* ================================================================= */
+/* Dịnh dạng stype cho bảng dataTable JQuery */
+
+.bang {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* Tùy chỉnh khung table */
+table.dataTable {
+  /* border: 1px solid gray;  */
+  /* border-radius: 8px; Bo góc */
+  overflow: auto;
+}
+table.dataTable tbody {
+  max-height: 600px; /* Chiều cao cố định */
+  min-height: 600px; /* Đảm bảo chiều cao luôn cố định */
+  display: block;
+  overflow: auto; /* Thêm thanh cuộn nếu cần */
+  text-align: center;
+  /* border: 1px solid gray; */
+  /* border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px; */
+}
+
+/* Giữ nguyên chiều rộng các cột */
+table.dataTable thead,
+table.dataTable tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-radius: 8px;
+}
+
+/* Dòng trống để lấp đầy khoảng trống */
+table.dataTable tbody tr.empty-row td {
+  background-color: #f9f9f9; /* Màu dòng trống */
+  height: 40px; /* Chiều cao mỗi dòng trống */
+}
+
+table.dataTable thead th {
+  background-color: #0e61ce; /* Nền xanh cho tiêu đề */
+  color: white; /* Chữ trắng */
+  text-align: center; /* Canh giữa */
+}
+
+table.dataTable tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Dòng lẻ có màu xám nhạt */
+}
+
+table.dataTable tbody tr:nth-child(even) {
+  background-color: #ffffff; /* Dòng chẵn có màu trắng */
+}
+
+table.dataTable tbody tr:hover {
+  background-color: #e0f7fa; /* Dòng được hover có màu xanh nhạt */
+}
+
+/* Tùy chỉnh thanh phân trang */
+.dataTables_paginate .paginate_button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  margin: 2px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.dataTables_paginate .paginate_button:hover {
+  background-color: #2e7d32;
+}
+
+.dataTables_paginate .paginate_button.current {
+  background-color: #2e7d32; /* Nền của nút trang hiện tại */
+}
+
+/* css nút tìm kiếm  */
+/* Chỉnh sửa toàn bộ khung tìm kiếm */
+.dataTables_filter {
+  margin-bottom: 20px; /* Khoảng cách dưới */
+  text-align: right; /* Căn phải (mặc định) */
+}
+
+/* Chỉnh sửa label của tìm kiếm */
+.dataTables_filter label {
+  /* font-weight: bold; */
+  font-size: 14px;
+  color: #333;
+  margin-right: 10px;
+}
+
+/* Chỉnh sửa ô input của tìm kiếm */
+.dataTables_filter input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 250px; /* Chiều rộng của ô tìm kiếm */
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Khi focus vào ô tìm kiếm */
+.dataTables_filter input:focus {
+  border-color: #007bff; /* Màu viền khi focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Tùy chỉnh khoảng cách giữa các thành phần trong filter */
+.dataTables_filter input + label {
+  margin-left: 10px;
+}
+
+/* button sua xóa */
+.btn_sua,
+.btn_xoa {
+  background-color: #1c6fdb;
+  border-radius: 5px;
+  border: none;
+  width: 70px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_xoa {
+  background-color: red;
+  margin-left: 5px;
+}
+
+.btn_xoa:hover {
+  background-color: rgb(235, 43, 43);
+}
+
+.btn_sua:hover {
+  background-color: #0e639c;
+}
+.btn_sua a,
+.btn_xoa a {
+  text-decoration: none;
+  color: white;
+}
+
+/* định dạng phân trang  */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  background-color: rgb(185, 181, 181); /* Màu nền */
+  color: white; /* Màu chữ */
+  border: 1px solid rgb(185, 181, 181);
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px; /* Bo góc */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* định dạng nút phân trang */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background-color: #ff6b6b; /* Màu nền trang hiện tại */
+  color: white; /* Màu chữ */
+  font-weight: bold; /* In đậm */
+  border: 1px solid #ff6b6b;
+}
