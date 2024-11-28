@@ -1,0 +1,311 @@
+.main_product {
+  width: 70%;
+  height: 1000px;
+  /* background-color: antiquewhite; */
+  margin: auto;
+  margin-top: 20px;
+}
+
+.link_logic {
+  display: flex;
+  gap: 10px;
+}
+
+.link_logic .trangdich p {
+  color: rgb(42, 79, 243);
+  padding-top: 1px;
+}
+
+.namesp {
+  width: 100%;
+  height: 40px;
+  /* background-color: aqua; */
+  display: flex;
+  gap: 20px;
+  margin-top: -5px;
+}
+
+/* name */
+.namesp .name p {
+  font-weight: bolder;
+}
+
+/* sao đánh giá */
+.namesp .danhgia {
+  gap: 2px;
+  font-size: 0.9rem;
+}
+
+/* maincontent */
+.main_content {
+  margin-top: 20px;
+}
+
+/* ======================= carosel */
+.namesp .name .namesp .main_content .ctn_carosel {
+  background-color: aquamarine;
+  height: 100%;
+  width: 100%;
+}
+
+.carosel {
+  width: 80%;
+  height: 100%;
+  /* border: 1px solid black; */
+  margin: 0 auto;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-left: 0px;
+}
+
+/* Đặt màu cho các nút điều hướng */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgb(97, 95, 95); /* Màu đen */
+  border-radius: 50%; /* Bo tròn */
+  width: 30px;
+  height: 30px;
+}
+
+/* Dịch nút chỉ báo ra ngoài hình ảnh */
+.carousel-indicators {
+  bottom: 0; /* Dịch xuống dưới hình ảnh */
+  /* background-color: gray; */
+  width: 100px;
+  margin: 0px auto;
+  border-radius: 8px;
+}
+
+/* =========================ctn giá sản phẩm============================= */
+.info_product {
+  background-color: rgb(255, 255, 255);
+  width: 45%;
+}
+
+.info_product .ctn_price {
+  display: flex;
+  gap: 10px;
+}
+
+.info_product .ctn_price .price {
+  color: #ed1c24;
+  font-weight: bolder;
+}
+
+.info_product .ctn_price .price span {
+  font-size: 0.9rem;
+}
+
+.info_product .ctn_price .last_price {
+  color: #999999;
+  text-decoration: line-through;
+}
+
+.info_product .ctn_price .last_price span {
+  font-size: 0.9rem;
+}
+
+.info_product .ctn_price .percent {
+  background-color: #f9e9e2;
+  color: #ef5555;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.info_product .xuatxu {
+  margin-top: 10px;
+}
+
+.info_product .xuatxu #xuatxu,
+#thuonghieu {
+  font-weight: bolder;
+}
+
+.info_product .call span {
+  color: #2f80ed;
+}
+
+.info_product .camket .tieude {
+  background-color: #333333;
+  color: #fdaf17;
+  font-weight: bolder;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* cam kết */
+.info_product .camket .ctncamket_content {
+  padding: 10px;
+  border: 1px solid #c7bebe;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.info_product .camket .ctncamket_content .col-6 {
+  display: flex;
+  gap: 5px;
+}
+
+.info_product .camket .ctncamket_content .icon {
+  margin-left: 10px;
+}
+
+/*  css thông sản phẩm */
+/* Kiểu mặc định cho nút */
+.btn-option {
+  background: none;
+  border: 1px solid gray;
+  color: #000000;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-option:hover {
+  color: #0056b3;
+}
+
+/* Khi nút được chọn */
+.btn-option.active {
+  border: 1px solid #007bff; /* Viền xanh khi được chọn */
+  border-radius: 5px;
+}
+
+/* Xóa viền của collapse */
+.collapse {
+  width: 80%;
+  border: none;
+  margin-top: 20px;
+}
+
+.card {
+  border: none;
+}
+
+/* Ẩn tất cả nội dung (trừ nội dung được chọn) */
+.content {
+  display: none;
+  width: 600px;
+}
+
+/* Hiển thị nội dung được chọn */
+.content.active {
+  display: block;
+}
+
+/* chi tiết sản phẩm */
+.table_thongso table {
+  margin-top: 20px;
+  background-color: cadetblue;
+  width: 650px;
+}
+
+.table_thongso table td {
+  height: 50px;
+}
+
+/* Màu sắc cho hàng */
+.table_thongso tr:nth-child(odd) {
+  background-color: #f2f2f2; /* Màu xám nhạt cho hàng lẻ */
+}
+
+.table_thongso tr:nth-child(even) {
+  background-color: #ffffff; /* Màu trắng cho hàng chẵn */
+}
+
+.table_thongso tr {
+  border-radius: 5px;
+}
+
+/* có thể bạn sẽ thích nó */
+.lienquan {
+  width: 100%;
+  height: 800px;
+  /* background-color: rgb(7, 32, 32); */
+  margin-top: 30px;
+}
+
+.lienquan p {
+  font-size: 1.1rem;
+  font-weight: bolder;
+}
+.container_splq {
+  width: 100%;
+  height: 900px;
+  /* background-color: cadetblue; */
+  margin: 0 auto;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap; /*Cho phép xuống dòng nếu quá chiều rộng*/
+}
+
+.container_splq .card {
+  width: 280px;
+  height: auto;
+  background-color: white;
+  margin-left: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid gainsboro;
+  transition: box-shadow 0.3s ease; /* set time cho hiệu ứng đổ bóng*/
+}
+
+.container_splq .card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+}
+
+.container_splq .content_card {
+  margin-left: 10px;
+}
+
+.container_splq .card img {
+  width: auto;
+  height: 270px;
+  object-fit: contain;
+}
+
+.container_splq .card .name {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.container_splq .card .name a {
+  text-decoration: none;
+  color: black;
+}
+
+.card .price {
+  color: #ed1c24;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+
+.card .last_price {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.last_price .number_price {
+  text-decoration: line-through;
+  color: rgb(150, 150, 150);
+}
+
+.last_price .percent {
+  background-color: #fcd7d7;
+  border-radius: 5px;
+  padding: 2px;
+  color: red;
+  font-size: 0.8rem;
+}
+
+.evaluate {
+  margin-top: 10px;
+}

@@ -1,46 +1,130 @@
-body {
-  background-color: wheat;
+/* khi được select */
+header .main_menu ul li:nth-child(2) a {
+  color: white; /* Màu chữ đỏ */
 }
 
-.container_sanpham .title {
+.container_sp .title {
   display: flex;
   gap: 10px;
-  margin-top: 10px;
-  justify-content: center;
+  margin-top: 80px;
+  margin-left: 2%;
 }
-
-.container_sanpham .title p {
+.container_sp .title p {
   font-size: 1.4rem;
 }
-
-.container_sanpham .add_sanpham {
-  max-width: 70%;
-  max-height: 0; /* Khởi tạo max-height là 0 */
-  background-color: white;
-  margin: 0 auto;
+/* add sản phẩm */
+.container_sp .container_addsp {
+  max-width: 0;
+  max-height: 0;
+  background-color: rgb(231, 231, 231);
   border-radius: 8px;
-  overflow: hidden; /* Đảm bảo không hiển thị phần tử bên ngoài */
-  transition: max-height 0.7s ease-in-out; /* Thêm hiệu ứng chuyển đổi cho max-height */
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-left: 2.5%;
+  overflow: hidden;
+  transition: max-height 1s ease, max-width 1s ease; /* Thêm hiệu ứng chuyển đổi */
   display: block; /* Giữ display là block để có thể chuyển đổi max-height */
 }
 
-.container_sanpham .table_danhmuc {
-  max-width: 80%;
-  height: auto;
-  background-color: white;
-  margin: 0 auto;
-  border-radius: 8px;
-  margin-top: 10px;
+/* ============= */
+.title_form {
+  display: flex;
+  justify-content: space-between;
 }
 
-.container_sanpham .title_table {
+/*btn cancel */
+
+.btn_cancell {
+  margin-right: 10px;
+}
+
+.btn_cancell button {
+  border: none;
+  background-color: rgb(161, 160, 160);
+  border-radius: 50%;
+  margin-top: 15px;
+}
+
+.btn_cancell button:hover {
+  border: none;
+  background-color: red;
+}
+
+.btn_cancell button svg {
+  fill: white;
+}
+/* =================== */
+.container_sp .container_addsp .title {
   display: flex;
   gap: 10px;
-  padding-top: 10px;
+  margin-top: 20px;
   margin-left: 10px;
+  align-items: center;
+}
+
+.container_sp .container_addsp .title p {
+  padding-top: 15px;
+}
+
+.container_sp .container_editsp {
+  max-width: 0;
+  max-height: 0;
+  background-color: rgb(231, 231, 231);
+  border-radius: 8px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-left: 2.5%;
+  overflow: hidden;
+  transition: max-height 1s ease, max-width 1s ease; /* Thêm hiệu ứng chuyển đổi */
+  display: block; /* Giữ display là block để có thể chuyển đổi max-height */
+}
+
+.container_sp .container_editsp .title {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.container_sp .container_editsp .title p {
+  padding-top: 15px;
+}
+/* Table sản phẩm  */
+.container_sp .container_tbsp {
+  width: 95%;
+  height: 800px;
+  background-color: rgb(231, 231, 231);
+  margin: auto;
+  border-radius: 8px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
+.container_sp .container_tbsp .title_tb {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
+  /* padding: 10px; */
+  font-size: 1.1rem;
+}
+
+.container_sp .container_tbsp .title_tbsp {
+  display: flex;
+  justify-content: space-between; /* Đẩy các phần tử ra hai đầu */
+}
+
+.container_sp .container_tbsp .title_tbsp .btn_addsp {
+  padding: 20px;
+}
+
+/* ============layout thêm sản phẩm */
+.container_sp .container_addsp .addsp_container {
+  display: flex;
+}
+
+/*=========================== css table  */
 /* table */
 .container_sanpham .table_sanpham table {
   margin-top: 30px;
@@ -63,6 +147,13 @@ td {
   background-color: #ffffff; /* Màu trắng */
 }
 
+/* css cho btn bootstrap */
+.btn-success {
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  gap: 5px;
+}
 /* ================================================================= */
 /* Dịnh dạng stype cho bảng dataTable JQuery */
 
@@ -83,9 +174,6 @@ table.dataTable tbody {
   display: block;
   overflow: auto; /* Thêm thanh cuộn nếu cần */
   text-align: center;
-  /* border: 1px solid gray; */
-  /* border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px; */
 }
 
 /* Giữ nguyên chiều rộng các cột */
@@ -94,7 +182,7 @@ table.dataTable tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
-  border-radius: 8px;
+  /* border-radius: 8px; */
 }
 
 /* Dòng trống để lấp đầy khoảng trống */
@@ -104,7 +192,7 @@ table.dataTable tbody tr.empty-row td {
 }
 
 table.dataTable thead th {
-  background-color: #0e61ce; /* Nền xanh cho tiêu đề */
+  background-color: #020911; /* Nền xanh cho tiêu đề */
   color: white; /* Chữ trắng */
   text-align: center; /* Canh giữa */
 }
@@ -129,6 +217,9 @@ table.dataTable tbody tr:hover {
   margin: 2px;
   padding: 5px 10px;
   border-radius: 5px;
+}
+.dataTables_length {
+  margin-left: 10px; /* Khoảng cách từ bên trái */
 }
 
 .dataTables_paginate .paginate_button:hover {
@@ -176,6 +267,11 @@ table.dataTable tbody tr:hover {
   margin-left: 10px;
 }
 
+.dataTables_info {
+  margin-left: 10px; /* Khoảng cách từ bên trái */
+  margin-bottom: 20px;
+}
+
 /* button sua xóa */
 .btn_sua,
 .btn_xoa {
@@ -186,6 +282,7 @@ table.dataTable tbody tr:hover {
   height: 30px;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .btn_xoa {

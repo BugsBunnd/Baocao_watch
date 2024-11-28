@@ -1,0 +1,583 @@
+/* khi select cho màu đỏ */
+header .main_menu ul li:nth-child(3) a {
+  color: white; /* Màu chữ đỏ */
+}
+
+.container_donhang .title {
+  display: flex;
+  gap: 10px;
+  margin-top: 80px;
+  margin-left: 2.5%;
+}
+.container_donhang .title p {
+  font-size: 1.4rem;
+}
+.container_donhang .container_title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container_donhang .container_title .title {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 2.5%;
+}
+
+.container_donhang .container_title .title p {
+  font-size: 1.2rem;
+}
+
+.container_donhang .container_title .cancel button {
+  border: none;
+  background-color: rgb(161, 160, 160);
+  border-radius: 50%;
+  margin-top: 15px;
+  /* width: 50px; */
+}
+
+.container_donhang .container_title .cancel button:hover {
+  border: none;
+  background-color: red;
+}
+
+.container_donhang .container_title .cancel button svg {
+  fill: white;
+}
+
+.container_donhang .container_title .cancel button:hover svg {
+  fill: white;
+}
+
+/* ================================== Container chi tiết đơn hàng */
+.container_donhang .container_chitietdh {
+  max-width: 40%; /* Ban đầu chiều rộng là 0 */
+  height: auto;
+  background-color: rgb(240, 237, 237);
+  margin: auto;
+  border-radius: 8px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  transition: max-height 1s ease, max-width 1s ease; /* Thêm hiệu ứng chuyển đổi */
+  display: block;
+}
+
+.container_donhang .container_chitietdh {
+  max-width: 0; /* Ban đầu ẩn */
+  height: 0; /* Chiều cao ban đầu ẩn */
+  overflow: hidden; /* Ẩn nội dung khi thu nhỏ */
+  background-color: rgb(240, 237, 237);
+  margin: auto;
+  border-radius: 8px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  transition: height 1s ease, max-width 1s ease; /* Hiệu ứng mượt mà */
+}
+.container_donhang .container_chitietdh.open {
+  max-width: 40%; /* Mở rộng chiều rộng */
+  height: auto; /* Đặt thành tự động (sẽ tính bằng JavaScript) */
+}
+
+.container_donhang .listproduct {
+  width: 95%;
+  height: 120px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid rgb(170, 170, 170);
+}
+
+.container_donhang .listproduct .img {
+  display: flex;
+  position: relative;
+}
+
+/* img item sản phẩm  */
+.container_donhang .container_chitietdh .image_product img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* icon x sản phẩm */
+.container_donhang .container_chitietdh .listproduct .icon {
+  display: inline-block;
+  transition: transform 0.5s ease, fill 0.5s ease;
+  position: absolute;
+  padding-left: 5px;
+}
+
+.container_donhang .container_chitietdh .listproduct .icon:hover svg {
+  fill: red;
+  border-radius: 50%;
+  transform: scale(1.2);
+}
+
+/* Khung cho phần name và price cho chi tiết sp */
+.container_donhang .container_chitietdh .container_name_price {
+  width: 100%;
+  height: 118px;
+  background-color: #fdfdfd;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: flex;
+}
+
+/* Tên sản phẩm */
+.container_donhang .container_chitietdh .container_name_price .name {
+  width: 70%;
+  padding: 10px;
+  font-weight: bold;
+  /* font-size: 0.9rem; */
+}
+
+/* Thông tin price sản phẩm */
+.container_donhang .container_chitietdh .container_name_price .list_price {
+  width: 30%;
+  padding-top: 10px;
+  padding-right: 20px;
+  text-align: right;
+}
+
+.container_donhang .container_chitietdh .container_name_price .price {
+  color: #dd042d;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.container_donhang .container_chitietdh .container_name_price .price span {
+  font-size: 1rem;
+}
+
+.container_donhang .container_chitietdh .container_name_price .last_price {
+  color: gray;
+  text-decoration: line-through;
+  font-size: 1.1rem;
+}
+
+.container_donhang .container_chitietdh .container_name_price .last_price span {
+  font-size: 1rem;
+}
+
+/* tăng giảm số lượng */
+.container_donhang .container_chitietdh .container_name_price .number-input {
+  margin-top: 10px;
+  display: flex;
+  align-items: center; /* Căn chỉnh theo chiều dọc */
+  gap: 2px;
+  justify-content: end;
+  height: 30px; /* Cung cấp chiều cao cho cả 3 phần tử */
+}
+
+.container_donhang
+  .container_chitietdh
+  .container_name_price
+  .number-input
+  input {
+  width: 30px;
+  text-align: center;
+  border-radius: 3px;
+  background-color: #d4d2d2;
+  border: none;
+  height: 100%; /* Chiều cao của input sẽ tự động bằng chiều cao của container */
+}
+
+.container_donhang
+  .container_chitietdh
+  .container_name_price
+  .number-input
+  button {
+  width: 25px;
+  text-align: center;
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: #007bff;
+  font-size: 1.1rem;
+  height: 100%; /* Đảm bảo nút có chiều cao bằng với container */
+}
+
+.container_donhang
+  .container_chitietdh
+  .container_name_price
+  .number-input
+  button:first-child {
+  color: gray;
+}
+
+/* Tổng tiền  */
+.container_donhang .container_chitietdh .total_price {
+  display: grid;
+  grid-template-areas:
+    "lable price"
+    ". tietkiem"; /* Lable chỉ xuất hiện trên hàng đầu, . giữ chỗ ở cột đầu tiên */
+  grid-template-columns: auto 1fr; /* Lable có kích thước tự động, price giãn hết chiều rộng */
+  row-gap: 10px; /* Khoảng cách giữa các hàng */
+  margin-top: 20px;
+}
+
+.container_donhang .container_chitietdh .total_price .lable {
+  grid-area: lable;
+  align-self: start; /* Căn lề trên */
+  margin-left: 20px;
+  font-weight: bolder;
+}
+
+.container_donhang .container_chitietdh .total_price .price {
+  grid-area: price;
+  justify-self: end; /* Đẩy sang phải */
+  margin-right: 40px;
+  color: #dd042d;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.container_donhang .container_chitietdh .total_price .price span {
+  font-size: 1rem;
+}
+
+.container_donhang .container_chitietdh .total_price .tietkiem {
+  grid-area: tietkiem;
+  justify-self: end; /* Đẩy sang phải */
+  margin-right: 40px;
+  color: green; /* Màu chữ khác để nổi bật */
+  font-size: 14px;
+}
+
+/* info chi tiết đơn hàng */
+.container_chitietdh .info .sex {
+  display: flex;
+  margin-left: 15px;
+  gap: 20px;
+}
+
+.container_chitietdh .info .nguoikhacnhan .hidden {
+  display: none;
+}
+
+/* Hiệu ứng viền kiểu truyện tranh */
+.container_chitietdh .info .nguoikhacnhan .cartoon-border {
+  border: 1px solid rgb(0, 148, 153); /* Viền màu xanh dương */
+  border-radius: 10px; /* Bo góc */
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+/* Hiệu ứng khi checkbox được chọn */
+#receiverInfo.show {
+  animation: fadeIn 0.5s ease-out; /* Hiệu ứng mờ dần khi hiển thị */
+}
+
+/* Hiệu ứng mờ dần */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container_chitietdh .info .title_tt {
+  margin-left: 12px;
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+
+.container_chitietdh .info .payment .shipcode {
+  border: 1px solid rgb(0, 148, 153);
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.container_chitietdh .info .payment .paycard {
+  margin-top: 10px;
+  border: 1px solid rgb(0, 148, 153);
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.container_chitietdh .info .payment .paycard .infopayment {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.container_chitietdh .info .payment .paycard .infopayment .name {
+  font-weight: bolder;
+  padding-top: 17px;
+}
+
+.container_chitietdh .info .payment .paycard .infopayment .thogtin {
+  margin-top: -10px;
+}
+
+/* ========================= hiệu ứng ẩn hiện phương thức thanh toán payment card*/
+.container_infopayment {
+  /* width: 20%; */
+  height: auto;
+  opacity: 0; /* Ẩn mặc định */
+  max-height: 0; /* Giới hạn chiều cao */
+  overflow: hidden; /* Ẩn nội dung khi bị giới hạn chiều cao */
+  transition: opacity 0.5s ease, max-height 0.5s ease; /* Hiệu ứng chuyển đổi */
+}
+
+#payment:checked ~ .container_infopayment {
+  opacity: 1; /* Hiện lên */
+  max-height: 100px; /* Chiều cao tối đa */
+}
+
+/*=========================== css table  */
+/* table đơn hàng */
+.container_donhang .table_donhang {
+  width: 95%;
+  height: 850px;
+  background-color: rgb(231, 231, 231);
+  /* margin: auto; */
+  border-radius: 8px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-left: 2.5%;
+}
+
+/* table */
+.table_donhang .table_sanpham table {
+  margin-top: 30px;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+.table_donhang .table_sanpham th,
+td {
+  /* border: 1px solid gray; */
+  height: 50px;
+}
+
+.table_donhang .table_sanpham tr:nth-child(even) {
+  background-color: #f2f2f2; /* Màu sáng */
+}
+
+.table_donhang .table_sanpham tr:nth-child(odd) {
+  background-color: #ffffff; /* Màu trắng */
+}
+
+/* css cho btn bootstrap */
+.btn-success {
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  gap: 5px;
+}
+
+/* ================================================================= */
+/* Dịnh dạng stype cho bảng dataTable JQuery */
+
+.bang {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+}
+
+/* Tùy chỉnh khung table */
+table.dataTable {
+  /* border: 1px solid gray;  */
+  /* border-radius: 8px; Bo góc */
+  overflow: auto;
+}
+table.dataTable tbody {
+  max-height: 700px; /* Chiều cao cố định */
+  min-height: 700px; /* Đảm bảo chiều cao luôn cố định */
+  display: block;
+  overflow: auto; /* Thêm thanh cuộn nếu cần */
+  text-align: center;
+}
+
+/* Giữ nguyên chiều rộng các cột */
+table.dataTable thead,
+table.dataTable tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  /* border-radius: 8px; */
+}
+
+/* Dòng trống để lấp đầy khoảng trống */
+table.dataTable tbody tr.empty-row td {
+  background-color: #f9f9f9; /* Màu dòng trống */
+  height: 40px; /* Chiều cao mỗi dòng trống */
+}
+
+table.dataTable thead th {
+  background-color: #222527; /* Nền xanh cho tiêu đề */
+  color: white; /* Chữ trắng */
+  text-align: center; /* Canh giữa */
+}
+
+table.dataTable tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Dòng lẻ có màu xám nhạt */
+}
+
+table.dataTable tbody tr:nth-child(even) {
+  background-color: #ffffff; /* Dòng chẵn có màu trắng */
+}
+
+table.dataTable tbody tr:hover {
+  background-color: #e0f7fa; /* Dòng được hover có màu xanh nhạt */
+}
+
+/* Tùy chỉnh thanh phân trang */
+.dataTables_paginate .paginate_button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  margin: 2px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.dataTables_length {
+  margin-left: 10px; /* Khoảng cách từ bên trái */
+}
+
+.dataTables_paginate .paginate_button:hover {
+  background-color: #2e7d32;
+}
+
+.dataTables_paginate .paginate_button.current {
+  background-color: #2e7d32; /* Nền của nút trang hiện tại */
+}
+
+/* css nút tìm kiếm  */
+/* Chỉnh sửa toàn bộ khung tìm kiếm */
+.dataTables_filter {
+  margin-bottom: 20px; /* Khoảng cách dưới */
+  text-align: right; /* Căn phải (mặc định) */
+}
+
+/* Chỉnh sửa label của tìm kiếm */
+.dataTables_filter label {
+  /* font-weight: bold; */
+  font-size: 14px;
+  color: #333;
+  margin-right: 10px;
+}
+
+/* Chỉnh sửa ô input của tìm kiếm */
+.dataTables_filter input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 250px; /* Chiều rộng của ô tìm kiếm */
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Khi focus vào ô tìm kiếm */
+.dataTables_filter input:focus {
+  border-color: #007bff; /* Màu viền khi focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Tùy chỉnh khoảng cách giữa các thành phần trong filter */
+.dataTables_filter input + label {
+  margin-left: 10px;
+}
+
+.dataTables_info {
+  margin-left: 10px; /* Khoảng cách từ bên trái */
+  margin-bottom: 20px;
+}
+
+/* button sua xóa */
+.btn_sua,
+.btn_xoa {
+  background-color: #2a7e09;
+  border-radius: 5px;
+  border: none;
+  width: auto;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 5px;
+}
+
+.btn_xoa {
+  background-color: red;
+  margin-left: 5px;
+}
+
+.btn_xoa:hover {
+  background-color: rgb(235, 43, 43);
+}
+
+.btn_sua:hover {
+  background-color: #13c57b;
+}
+.btn_sua a,
+.btn_xoa a {
+  text-decoration: none;
+  color: white;
+}
+
+/* định dạng phân trang  */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  background-color: rgb(185, 181, 181); /* Màu nền */
+  color: white; /* Màu chữ */
+  border: 1px solid rgb(185, 181, 181);
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px; /* Bo góc */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* định dạng nút phân trang */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background-color: #ff6b6b; /* Màu nền trang hiện tại */
+  color: white; /* Màu chữ */
+  font-weight: bold; /* In đậm */
+  border: 1px solid #ff6b6b;
+}
+
+/* Điều chỉnh độ rộng từng ô hàng */
+table.dataTable td:nth-child(1) {
+  width: 5%;
+}
+table.dataTable td:nth-child(2) {
+  width: 15%;
+}
+
+table.dataTable td:nth-child(3) {
+  width: 15%;
+}
+
+table.dataTable td:nth-child(4) {
+  width: 10%;
+}
+
+table.dataTable td:nth-child(5) {
+  width: 15%;
+}
+
+table.dataTable td:nth-child(6) {
+  width: 15%;
+}
+
+table.dataTable td:nth-child(7) {
+  width: 15%;
+}
+
+table.dataTable td:nth-child(8) {
+  width: 15%;
+}

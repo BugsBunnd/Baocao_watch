@@ -1,0 +1,566 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* ====================
+navbar
+======================== */
+nav .nav_container {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.logo_xx {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+
+nav .logo img {
+  width: 200px;
+  object-fit: cover;
+}
+
+nav .menu {
+  display: flex;
+  gap: 0px;
+}
+
+nav .menu div {
+  display: flex;
+  min-width: 100px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  text-align: start;
+}
+
+nav.menu div a {
+  text-decoration: none;
+  color: black;
+}
+
+nav.menu div:hover a {
+  color: red;
+  cursor: pointer;
+}
+nav.nu,
+nav.luxury {
+  margin-left: -20px;
+}
+
+/* hover menu */
+/* Đổi màu chữ thành đỏ khi hover vào */
+.xuhuong:hover a,
+.nam:hover a,
+.nu:hover a,
+.luxury:hover a,
+.cucaocap:hover a,
+.treotuong:hover a {
+  color: red;
+}
+
+.xuhuong,
+.nam,
+.nu,
+.luxury,
+.cucaocap,
+.treotuong {
+  position: relative; /* Để pseudo-element ::after được đặt chính xác dưới div */
+  display: inline-block; /* Đảm bảo div chỉ chiếm không gian cần thiết */
+}
+
+.xuhuong a,
+.nam a,
+.nu a,
+.luxury a,
+.cucaocap a,
+.treotuong a {
+  text-decoration: none; /* Xóa gạch chân của link nếu có */
+  color: black; /* Màu chữ ban đầu */
+}
+
+.xuhuong::after,
+.nam::after,
+.nu::after,
+.luxury::after,
+.cucaocap::after,
+.treotuong::after {
+  content: ""; /* Tạo một pseudo-element trống */
+  position: absolute;
+  bottom: 1px; /* Đặt đường kẻ ngay dưới div */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Độ dày của đường kẻ */
+  background-color: red; /* Màu đường kẻ */
+  transform: scaleX(0); /* Ban đầu đường kẻ không hiển thị */
+  transform-origin: bottom right; /* Đường kẻ sẽ mở rộng từ bên phải */
+  transition: transform 0.3s ease-out; /* Hiệu ứng chuyển động */
+}
+
+.xuhuong:hover::after,
+.nam:hover::after,
+.nu:hover::after,
+.luxury:hover::after,
+.cucaocap:hover::after,
+.treotuong:hover::after {
+  transform: scaleX(1); /* Khi hover, đường kẻ mở ra đầy đủ */
+  transform-origin: bottom left; /* Đường kẻ mở rộng từ bên trái */
+}
+
+.xuhuong,
+.nam,
+.nu,
+.luxury,
+.cucaocap,
+.treotuong {
+  pointer-events: auto; /* Bật lại sự kiện hover sau khi animation hoàn tất */
+  animation: none; /* Đảm bảo animation không chạy khi không cần thiết */
+}
+
+/* Đảm bảo rằng hiệu ứng chỉ chạy sau khi animation hoàn tất */
+.xuhuong,
+.nam,
+.nu,
+.luxury,
+.cucaocap,
+.treotuong {
+  transition: none;
+}
+/* end hover menu */
+
+/* icon love */
+.love {
+  margin-left: -20px;
+}
+
+/* search */
+
+.sreach {
+  position: relative;
+  height: 30px;
+}
+.sreach .input {
+  width: 30px;
+  height: 25px;
+  /* border: 1px solid gray; */
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  padding: 15px;
+  font-size: 0.9rem;
+  transition: 0.5s;
+}
+.btn {
+  width: 30px;
+  height: 25px;
+  padding: 15px;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+
+.fa-magnifying-glass {
+  border: 0;
+  color: gray;
+  transition: 0.5s;
+}
+
+.sreach.acctive .fa-magnifying-glass {
+  color: black;
+}
+.sreach.acctive .input {
+  border: 1px solid gray;
+  width: 230px;
+  padding-left: 40px;
+}
+
+.btn:focus,
+.input:focus {
+  outline: none;
+}
+
+/* Luôn trong trạng thái "hover" cho .xuhuong */
+.xuhuong a {
+  color: red; /* Màu chữ luôn đỏ */
+}
+
+.xuhuong::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  transform-origin: bottom left;
+  transition: 0.5s; /* Không cần hiệu ứng chuyển động */
+}
+/* ==============================
+end navbar 
+==================================*/
+
+/* =================================
+container item 
+====================================*/
+.container_item {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.container_item .item {
+  width: 225px;
+  height: 60px;
+  background-color: #ecfbe5;
+  border-radius: 10px;
+  display: flex;
+  margin-top: 10px;
+}
+
+.container_item .item_left {
+  width: 60px;
+  height: 100%;
+  background-color: #fdaf17;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 50% 100%;
+  border-bottom-right-radius: 50% 100%;
+}
+
+.container_item .item_left img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  margin-top: 18px;
+  margin-left: 10px;
+}
+
+.container_item .item .title {
+  font-weight: bold;
+  text-align: left;
+  margin-top: 0px;
+  margin-left: 10px;
+  font-size: 0.9rem;
+}
+
+.container_item .item .content {
+  margin-left: 10px;
+  margin-top: -15px;
+  font-size: 0.85rem;
+  overflow-wrap: break-word; /* Cho phép xuống dòng nếu từ quá dài */
+  white-space: normal; /* Cho phép văn bản xuống dòng tự nhiên */
+  line-height: 1.2;
+}
+
+/*================ 
+end container item 
+==================*/
+
+/*================
+ main product
+ =================== */
+.container {
+  width: 1200px;
+  height: auto;
+  /* background-color: #3399ff; */
+  background: linear-gradient(to right, #66ccff, #3399ff);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.baner img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.mega_box {
+  background: white;
+  border-radius: 8px;
+  width: calc(25% - 20px); /* Mỗi thẻ chiếm 25% chiều rộng trừ khoảng cách */
+  height: 430px;
+  margin-top: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.mr {
+  margin-top: -10px;
+}
+.box img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.box img:hover {
+  transform: scale(1.2);
+}
+
+.price {
+  margin-top: 10px;
+  text-align: start;
+  color: red;
+  font-weight: bold;
+  margin-left: 15px;
+}
+.describe {
+  margin-top: 10px;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.last_price {
+  font-size: 0.9rem;
+  margin-left: 15px;
+  margin-top: -10px;
+}
+
+.price_last {
+  text-decoration: line-through;
+}
+
+.rate_down {
+  background-color: #ffcce5;
+  border-radius: 2px;
+  color: red;
+  font-size: 0.75rem;
+}
+
+.evaluate {
+  margin-left: 15px;
+}
+
+/*================ 
+end main product
+================= */
+
+/*=======================
+ Đánh giá 
+ ======================*/
+.container_danhgia {
+  height: 400px;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+/* content left */
+.container_danhgia .content_left {
+  width: 350px;
+  height: 200px;
+  /* background-color: gray; */
+}
+
+.container_danhgia .content_left .title_danhgia {
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+}
+
+.container_danhgia .content_left .content {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.container_danhgia .content_left .icon {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.container_danhgia .content_left .link_danhgia {
+  text-align: center;
+  padding: 15px;
+}
+.container_danhgia .content_left .link_danhgia a {
+  text-decoration: none;
+}
+/* content right */
+.container_danhgia .content_right {
+  width: 900px;
+  height: 260px;
+  display: flex;
+  border-radius: 5px;
+  overflow: auto;
+  /* background-color: #00a651; */
+}
+
+/* Thanh cuộn tùy chỉnh */
+.container_danhgia .content_right::-webkit-scrollbar {
+  width: 12px; /* Chiều rộng của thanh cuộn dọc */
+  height: 12px; /* Chiều rộng của thanh cuộn ngang */
+}
+
+/* Khung của thanh cuộn */
+.container_danhgia .content_right::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Màu nền cho khung cuộn */
+  border-radius: 10px; /* Bo góc cho khung cuộn */
+  border: 1px solid #ccc; /* Viền cho khung cuộn */
+}
+
+/* Thanh kéo */
+.container_danhgia .content_right::-webkit-scrollbar-thumb {
+  background-color: orange; /* Màu nền của thanh kéo */
+  border-radius: 10px; /* Bo góc cho thanh kéo */
+  border: 2px solid #f0f0f0; /* Viền cho thanh kéo */
+}
+
+/* Hiệu ứng khi hover vào thanh kéo */
+.container_danhgia .content_right::-webkit-scrollbar-thumb:hover {
+  background-color: #ee9453; /* Màu khi hover thanh kéo */
+}
+/* end thanh cuộn  */
+.container_danhgia .card {
+  border: none;
+  padding: 10px;
+}
+
+.container_danhgia .card p {
+  font-size: 15px;
+  padding-top: 0px;
+  padding-left: 10px;
+  line-height: 20px;
+}
+
+.container_danhgia .box {
+  width: 280px;
+  height: 180px;
+  border-radius: 5px;
+  border: 1px solid #ee9453;
+  background-color: white;
+  margin-right: 20px;
+}
+
+.container_danhgia .box:last-child {
+  margin-right: 0px;
+}
+
+.container_danhgia .name {
+  margin-top: 15px;
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+.container_danhgia .sticker {
+  margin-top: 5px;
+  margin-left: 30px;
+  color: #00a651;
+}
+
+/* ================
+End Đánh giá
+=================== */
+
+/*======================= 
+footer 
+=========================*/
+footer {
+  width: 100%;
+  height: auto;
+  background-color: #333;
+}
+
+footer .content {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  color: #fdaf17;
+  gap: 100px;
+}
+footer .content ul li {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+footer .dc_address {
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+}
+
+footer .content ul li ul li {
+  color: #f8f8f8;
+  margin-top: 10px;
+  margin-left: -30px;
+  font-size: 0.9rem;
+}
+
+footer .house_open {
+  color: gray;
+  font-size: 0.9rem;
+  margin-left: 17px;
+}
+
+footer .item_internet {
+  display: flex;
+  gap: 60px;
+}
+
+footer .item_internet svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* copyright */
+footer .copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: gray;
+}
+/*======================= 
+end footer 
+=========================*/
+
+/* ==============
+backtotop 
+==================*/
+.backToTop {
+  position: fixed;
+  z-index: 1000;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #fc860059;
+  border: none;
+  bottom: 40px; /* Cách cạnh dưới 20px */
+  right: 40px; /* Cách cạnh phải 20px */
+  display: none;
+}
+
+.backToTop:hover path {
+  fill: #344054;
+}
+/* ===============
+end backToTop 
+=================*/
