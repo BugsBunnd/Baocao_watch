@@ -1,76 +1,20 @@
 <!DOCTYPE html>
-<html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chữ chạy màu rượt đuổi</title>
-    <style>
-      /* Định dạng cho văn bản với màu chữ mặc định là đen */
-      .color-running-text {
-        font-size: 40px;
-        font-weight: bold;
-        display: inline-block;
-        white-space: nowrap;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>addddd</h1>
 
-      /* Các chữ bên trong span sẽ chạy màu */
-      .color-running-text span {
-        display: inline-block;
-        color: black; /* Màu mặc định là đen */
-        animation: colorChange 3s infinite;
-      }
-
-      /* Định nghĩa hiệu ứng thay đổi màu sắc */
-      @keyframes colorChange {
-        0% {
-          color: red;
-        }
-        25% {
-          color: orange;
-        }
-        50% {
-          color: yellow;
-        }
-        75% {
-          color: green;
-        }
-        100% {
-          color: blue;
-        }
-      }
-
-      /* Đảm bảo mỗi chữ có sự trì hoãn khác nhau để tạo hiệu ứng rượt đuổi */
-      .color-running-text span:nth-child(1) {
-        animation-delay: 0s;
-      }
-      .color-running-text span:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .color-running-text span:nth-child(3) {
-        animation-delay: 0.4s;
-      }
-      .color-running-text span:nth-child(4) {
-        animation-delay: 0.6s;
-      }
-      .color-running-text span:nth-child(5) {
-        animation-delay: 0.8s;
-      }
-      /* Tiếp tục như vậy nếu có thêm các chữ */
-    </style>
-  </head>
-  <body>
-    <p class="color-running-text">
-      <span>Ch</span>
-      <span>ữ</span>
-      <span> </span>
-      <span>c</span>
-      <span>h</span>
-      <span>ạ</span>
-      <span>y</span>
-      <span> </span>
-      <span>m</span>
-      <span>à</span>
-      <span>u</span>
-    </p>
-  </body>
+  <form action="index.php?act=themdanhmuc" method="post">
+    tên danh mục <input type="text" name="name">
+    <br> <br>
+    ghi chú <input type="text" name="ghichu">
+    <br> <br>
+    <button type="submit" name="themmoi">Thêm mới danh mục</button>
+  </form>
+  <div id="toast"></div>
+</body>
 </html>
