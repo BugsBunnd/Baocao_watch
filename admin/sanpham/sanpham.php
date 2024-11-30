@@ -20,7 +20,7 @@
 
       <!-- add sản phẩm -->
       <div class="container_addsp">
-        <form action="">
+        <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
           <div class="title_form">
             <div class="title">
               <svg
@@ -65,6 +65,7 @@
                   class="form-control"
                   id="name"
                   placeholder="Nhập tên sản phẩm"
+                  name="name"
                 />
               </div>
 
@@ -78,6 +79,7 @@
                     class="form-control"
                     placeholder="Nhập giá sản phẩm"
                     id="last_price"
+                    name="giagoc"
                   />
                   <span class="input-group-text">VNĐ</span>
                 </div>
@@ -93,6 +95,7 @@
                     class="form-control"
                     placeholder="Nhập giá sản phẩm"
                     id="giaban"
+                    name="giaban"
                     
                   />
                   <span class="input-group-text">VNĐ</span>
@@ -111,6 +114,7 @@
                     id="tile"
                     readonly 
                     style="color: red;"
+                    name="tilegiam"
                   />
                   <span class="input-group-text">%</span>
                 </div>
@@ -122,12 +126,16 @@
                   class="form-select"
                   aria-label="Default select example"
                   id="danhmucsp"
+                  name="danhmuc"
                   
                 >
                   <option value="" selected disabled>Chọn Danh Mục Cha</option>
-                  <option value="1">Nam Cá Tính</option>
-                  <option value="2">Hồng Mạnh Mẽ</option>
-                  <option value="3">Nữ Siêu Mạnh</option>
+                  <?php 
+                      foreach($listdanhmuc as $danhmuc){
+                          extract($danhmuc);
+                          echo '<option value="' . $id . '">' . $name . '</option>';
+                      }
+                  ?>
                 </select>
               </div>
 
@@ -140,6 +148,7 @@
                   class="form-control"
                   type="file"
                   id="file_anhsp"
+                  name="anhsp"
                   
                 />
               </div>
@@ -153,6 +162,7 @@
                   class="form-control"
                   type="file"
                   id="chitiet_anhsp"
+                  name="anhchitiet[]"
                   multiple
                   
                 />
@@ -171,6 +181,7 @@
                   class="form-control"
                   id="exampleFormControlInput1"
                   placeholder="Nhập xuất xứ"
+                  name="xuatxu"
                   
                 />
               </div>
@@ -184,7 +195,7 @@
                   class="form-control"
                   id="exampleFormControlInput1"
                   placeholder="Nhập tên thương hiệu sản phẩm"
-                  
+                  name="tenthuonghieu"
                 />
               </div>
 
@@ -198,25 +209,24 @@
                   class="form-control"
                   id="exampleFormControlInput1"
                   placeholder="Ví dụ: Nam, Nữ"
+                  name="doituong"
                   
                 />
               </div>
 
               <!-- select loại máy -->
-              <div class="p-2 mb-2">
-                <label for="loaimay" class="form-label">Loại máy</label>
-                <select class="form-select" aria-label="Default select example">
-                  <option value="" selected disabled>Chọn loại máy</option>
-                  <option value="mechanical_manual">
-                    Máy cơ lên dây thủ công
-                  </option>
-                  <option value="mechanical_automatic">Máy cơ tự động</option>
-                  <option value="quartz">Máy quartz</option>
-                  <option value="hybrid">Máy hybrid</option>
-                  <option value="solar">Máy năng lượng mặt trời</option>
-                  <option value="kinetic">Máy kinetic</option>
-                  <option value="smartwatch">Đồng hồ thông minh</option>
-                </select>
+
+              <div class="mb-2 p-2">
+                <label for="loaimay" class="form-label"
+                  >Loại máy</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="loaimay"
+                  placeholder="Nhập loại máy"
+                  name="loaimay"
+                />
               </div>
 
               <!-- Chất liệu dây -->
@@ -229,53 +239,44 @@
                   class="form-control"
                   id="exampleFormControlInput1"
                   placeholder="Nhập chất liệu dây đồng hồ"
-                  
+                  name="chatlieuday"
                 />
               </div>
 
-              <!-- select loại máy -->
-              <div class="p-2 mb-2">
-                <label for="khangnuoc" class="form-label">Kháng nước</label>
-                <select class="form-select" aria-label="Default select example">
-                  <option value="no_resistance">Không kháng nước</option>
-                  <option value="30m">
-                    3 ATM / 30m - Chống nước nhẹ (rửa tay, mưa nhỏ)
-                  </option>
-                  <option value="50m">5 ATM / 50m - Chống nước khi tắm</option>
-                  <option value="100m">
-                    10 ATM / 100m - Chống nước khi bơi
-                  </option>
-                  <option value="200m">
-                    20 ATM / 200m - Chống nước khi lặn nông
-                  </option>
-                  <option value="diver">
-                    Diver's Watch - Lặn chuyên nghiệp
-                  </option>
-                </select>
+              <!-- kháng nước -->
+
+              <div class="mb-2 p-2">
+                <label for="khangnuoc" class="form-label"
+                  >Kháng nước</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="khangnuoc"
+                  placeholder="vd: Có or Không"
+                  name="khangnuoc"
+        
+                />
               </div>
 
-              <!-- select chất liệu kính -->
-              <div class="p-2">
-                <label for="chatlieukinh" class="form-label"
+              <!-- chát liệu kính-->
+              <div class="mb-2 p-2">
+                <label for="chatlieu" class="form-label"
                   >Chất liệu kính</label
                 >
-                <select class="form-select" aria-label="Default select example">
-                  <option value="stainless_steel">Thép không ghỉ</option>
-                  <option value="titanium">Titanium</option>
-                  <option value="plastic">Nhựa</option>
-                  <option value="leather">Da</option>
-                  <option value="rubber">Cao su</option>
-                  <option value="gold">Vàng</option>
-                  <option value="silver">Bạc</option>
-                  <option value="carbon_fiber">Sợi carbon</option>
-                  <option value="sapphire_glass">Kính sapphire</option>
-                </select>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="chatlieu"
+                  placeholder="Nhập chất liệu kính "
+                  name="chatlieukinh"
+                />
               </div>
             </div>
           </div>
           <!-- Nút submit -->
           <div class="d-flex p-2">
-            <button type="submit" onclick="return ktform_add_sp()"  class="btn btn-success ms-auto">
+            <button type="submit" onclick="return ktform_add_sp()" name="add_sp" value="1" class="btn btn-success ms-auto">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
@@ -473,21 +474,19 @@
               </div>
 
               <!-- select loại máy -->
-              <div class="p-2 mb-2">
-                <label for="loaimay" class="form-label">Loại máy</label>
-                <select class="form-select" aria-label="Default select example">
-                  <option value="" selected disabled>Chọn loại máy</option>
-                  <option value="mechanical_manual">
-                    Máy cơ lên dây thủ công
-                  </option>
-                  <option value="mechanical_automatic">Máy cơ tự động</option>
-                  <option value="quartz">Máy quartz</option>
-                  <option value="hybrid">Máy hybrid</option>
-                  <option value="solar">Máy năng lượng mặt trời</option>
-                  <option value="kinetic">Máy kinetic</option>
-                  <option value="smartwatch">Đồng hồ thông minh</option>
-                </select>
+              <div class="mb-2 p-2">
+                <label for="loaimay" class="form-label"
+                  >Loại máy</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="loaimay"
+                  placeholder="Nhập loại máy"
+                />
               </div>
+
+
 
               <!-- Chất liệu dây -->
               <div class="mb-2 p-2">
@@ -503,44 +502,32 @@
                 />
               </div>
 
-              <!-- select loại máy -->
-              <div class="p-2 mb-2">
-                <label for="khangnuoc" class="form-label">Kháng nước</label>
-                <select class="form-select" aria-label="Default select example">
-                  <option value="no_resistance">Không kháng nước</option>
-                  <option value="30m">
-                    3 ATM / 30m - Chống nước nhẹ (rửa tay, mưa nhỏ)
-                  </option>
-                  <option value="50m">5 ATM / 50m - Chống nước khi tắm</option>
-                  <option value="100m">
-                    10 ATM / 100m - Chống nước khi bơi
-                  </option>
-                  <option value="200m">
-                    20 ATM / 200m - Chống nước khi lặn nông
-                  </option>
-                  <option value="diver">
-                    Diver's Watch - Lặn chuyên nghiệp
-                  </option>
-                </select>
+              <!-- kháng nước -->
+
+              <div class="mb-2 p-2">
+                <label for="khangnuoc" class="form-label"
+                  >Kháng nước</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="khangnuoc"
+                  placeholder="vd: Có or Không"
+        
+                />
               </div>
 
-              <!-- select chất liệu kính -->
-              <div class="p-2">
-                <label for="chatlieukinh" class="form-label"
+              <!-- chát liệu kính-->
+              <div class="mb-2 p-2">
+                <label for="chatlieu" class="form-label"
                   >Chất liệu kính</label
                 >
-                <select class="form-select" aria-label="Default select example">
-                  <option value="stainless_steel">Thép không gỉ</option>
-                  <option value="titanium">Titanium</option>
-                  <option value="ceramic">Gốm</option>
-                  <option value="plastic">Nhựa</option>
-                  <option value="leather">Da</option>
-                  <option value="rubber">Cao su</option>
-                  <option value="gold">Vàng</option>
-                  <option value="silver">Bạc</option>
-                  <option value="carbon_fiber">Sợi carbon</option>
-                  <option value="sapphire_glass">Kính sapphire</option>
-                </select>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="chatlieu"
+                  placeholder="Nhập chất liệu kính "
+                />
               </div>
             </div>
           </div>
@@ -610,131 +597,77 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Image</th>
-                <th>Description</th>
-                <th>Evaluate</th>
-                <th>Extraday</th>
-                <th>Action</th>
+                <th>Tên sản phẩm</th>
+                <th>Ảnh sản phẩm</th>
+                <th>Giá bán</th>
+                <th>Ngày thêm</th>
+                <th>Thao Tác</th>
               </tr>
             </thead>
             <tbody>
+              <!-- show sản phẩm lên -->
+              <?php
+              foreach($listsanpham as $sanpham){
+                  extract($sanpham);
+                  $xoasp = "index.php?act=xoasp&id=".$id;
+                  echo '<tr>
+                  <td>'.$id.'</td>
+                  <td>'.$name.'</td>
+                  <td>
+                    <img
+                      src="../img/watch.png"
+                      alt="icon"
+                      style="
+                        width: auto;
+                        height: 100%;
+                        max-width: 100%;
+                        max-height: 50px;
+                        object-fit: contain;
+                        border-radius: 8px;
+                      "
+                    />
+                  </td>
+                  <td>'.$giaban.'</td>
+                  <td>'.$create_at.'</td>
+                  <td>
+                    <button class="btn_sua" onclick="ShowEditSP()">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                        width="15px"
+                        hight="15px"
+                        fill="white"
+                      >
+                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                          d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1 0 32c0 8.8 7.2 16 16 16l32 0zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
+                        />
+                      </svg>
+                      Sửa
+                    </button>
+                    <button class="btn_xoa">
+                      <a href="'.$xoasp.'">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 448 512"
+                          width="15px"
+                          hight="15px"
+                          fill="white"
+                        >
+                          <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                          <path
+                            d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"
+                          />
+                        </svg>
+                        Xóa</a
+                      >
+                    </button>
+                  </td>
+                </tr>';
+                }
+
+              ?>
               <!-- Ví dụ thêm 15 dòng -->
-              <tr>
-                <td>001</td>
-                <td>Nam cá tính</td>
-                <td>Nam cá tính</td>
-                <td>
-                  <img
-                    src="../img/watch.png"
-                    alt="icon"
-                    style="
-                      width: auto;
-                      height: 100%;
-                      max-width: 100%;
-                      max-height: 50px;
-                      object-fit: contain;
-                      border-radius: 8px;
-                    "
-                  />
-                </td>
-                <td>Nam cá tính</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing</td>
-
-                <td>25</td>
-                <td>
-                  <button class="btn_sua" onclick="ShowEditSP()">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                      width="15px"
-                      hight="15px"
-                      fill="white"
-                    >
-                      <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                      <path
-                        d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1 0 32c0 8.8 7.2 16 16 16l32 0zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
-                      />
-                    </svg>
-                    Sửa
-                  </button>
-                  <button class="btn_xoa">
-                    <a href="">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512"
-                        width="15px"
-                        hight="15px"
-                        fill="white"
-                      >
-                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path
-                          d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"
-                        />
-                      </svg>
-                      Xóa</a
-                    >
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>001</td>
-                <td>Nam cá tính</td>
-                <td>Nam cá tính</td>
-                <td>
-                  <img
-                    src="../img/watch.png"
-                    alt="icon"
-                    style="
-                      width: auto;
-                      height: 100%;
-                      max-width: 100%;
-                      max-height: 50px;
-                      object-fit: contain;
-                      border-radius: 8px;
-                    "
-                  />
-                </td>
-                <td>Nam cá tính</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing</td>
-
-                <td>25</td>
-                <td>
-                  <button class="btn_sua" onclick="ShowEditSP()">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                      width="15px"
-                      hight="15px"
-                      fill="white"
-                    >
-                      <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                      <path
-                        d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1 0 32c0 8.8 7.2 16 16 16l32 0zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
-                      />
-                    </svg>
-                    Sửa
-                  </button>
-                  <button class="btn_xoa">
-                    <a href="">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512"
-                        width="15px"
-                        hight="15px"
-                        fill="white"
-                      >
-                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path
-                          d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"
-                        />
-                      </svg>
-                      Xóa</a
-                    >
-                  </button>
-                </td>
-              </tr>
             </tbody>
           </table>
         </div>

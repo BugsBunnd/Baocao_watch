@@ -150,12 +150,12 @@ function ktform_add_sp() {
 
   var chitiet_anhsp = document.getElementById("chitiet_anhsp");
 
-  // Kiểm tra xem đã chọn file hay chưa
-  if (chitiet_anhsp.files.length === 0) {
-    alert("Vui lòng chọn ảnh chi tiết sản phẩm!");
-    chitiet_anhsp.focus();
-    return false;
-  }
+  // // Kiểm tra xem đã chọn file hay chưa
+  // if (chitiet_anhsp.files.length === 0) {
+  //   alert("Vui lòng chọn ảnh chi tiết sản phẩm!");
+  //   chitiet_anhsp.focus();
+  //   return false;
+  // }
 
   return true;
 }
@@ -200,14 +200,14 @@ function ktform_sua_sp() {
     return false;
   }
 
-  var chitiet_anhsp = document.getElementById("chitiet_anhsp_sua");
+  // var chitiet_anhsp = document.getElementById("chitiet_anhsp_sua");
 
-  // Kiểm tra xem đã chọn file hay chưa
-  if (chitiet_anhsp.files.length === 0) {
-    alert("Vui lòng chọn ảnh chi tiết sản phẩm!");
-    chitiet_anhsp.focus();
-    return false;
-  }
+  // // Kiểm tra xem đã chọn file hay chưa
+  // if (chitiet_anhsp.files.length === 0) {
+  //   alert("Vui lòng chọn ảnh chi tiết sản phẩm!");
+  //   chitiet_anhsp.focus();
+  //   return false;
+  // }
 
   return true;
 }
