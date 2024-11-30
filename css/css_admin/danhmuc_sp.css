@@ -72,8 +72,8 @@ header .main_menu ul li:first-child a {
 }
 /* ======================Sửa sản phẩm */
 .container_danhmuc_sp .edit_sanpham {
-  max-width: 0;
-  max-height: 0; /* Khởi tạo max-height là 0 */
+  max-width: 70%;
+  max-height: 588px; /* Khởi tạo max-height là 0 */
   background-color: rgb(221, 221, 221);
   margin: 0 auto;
   border-radius: 8px;
