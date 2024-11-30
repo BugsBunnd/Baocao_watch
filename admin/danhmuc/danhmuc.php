@@ -51,6 +51,7 @@
               type="text"
               class="form-control"
               name="name"
+              id = "name"
               placeholder="Nhập tên danh mục"
               require
             />
@@ -60,12 +61,13 @@
             <textarea
               class="form-control"
               name="ghichu"
+              id="ghichu"
               rows="3"
               require
             ></textarea>
           </div>
           <div class="p-2 mb-2 mt-3">
-            <button type="submit" name="themmoi" class="btn btn-success">
+            <button type="submit" name="themmoi" onclick="return kiemtraform_add()" value="1" class="btn btn-success">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
@@ -117,7 +119,8 @@
             <input
               type="text"
               class="form-control"
-              id="name_danhmuc"
+              id="name_edit"
+              name="name_edit"
               placeholder="Nhập tên mới"
             />
           </div>
@@ -125,13 +128,13 @@
             <label for="description" class="form-label p-2">Description:</label>
             <textarea
               class="form-control"
-              id="description"
-              name="description"
+              id="ghichu_edit"
+              name="ghichu_edit"
               rows="3"
             ></textarea>
           </div>
           <div class="p-2 mb-2 mt-3">
-            <button type="submit" name="editsp" class="btn btn-info">
+            <button type="submit" name="editsp" value="1" onclick="return kiemtraform_edit()" class="btn btn-info">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
@@ -273,3 +276,4 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <!-- js của mình -->
     <script src="../js/js_admin/danhmuc_sp.js"></script>
+    

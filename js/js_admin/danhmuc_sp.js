@@ -89,3 +89,40 @@ function Cancell_edit() {
     targetElement.style.maxWidth = "0px"; // Thu nhỏ lại khi ẩn
   }
 }
+
+function kiemtraform_add() {
+  var name = document.getElementById("name");
+  var ghichu = document.getElementById("ghichu");
+
+  if (name.value == "") {
+    alert("Bạn phải nhập tên");
+    name.focus();
+    return false;
+  }
+
+  if (ghichu.value == "") {
+    alert("Bạn phải nhập ghi chú");
+    ghichu.focus();
+    return false;
+  }
+
+  return true;
+}
+
+function kiemtraform_edit() {
+  var name = document.getElementById("name_edit");
+  if (name.value == "") {
+    alert("Vui lòng nhập tên mới");
+    name.focus();
+    return false;
+  }
+
+  var ghichu = document.getElementById("ghichu_edit");
+  if (ghichu.value == "") {
+    alert("Vui lòng nhập ghi chú");
+    ghichu.focus();
+    return false;
+  }
+
+  return true;
+}
