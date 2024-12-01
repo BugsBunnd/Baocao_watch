@@ -62,22 +62,6 @@ function ShowEditSP() {
   }
 }
 
-function Cancell_edit() {
-  // Lấy phần tử cần thay đổi display
-  const targetElement = document.querySelector(
-    ".container_sp .container_editsp"
-  );
-
-  // Kiểm tra nếu form đang mở
-  const computedStyle = window.getComputedStyle(targetElement);
-  const maxHeight = computedStyle.maxHeight; //lấy ra chiều cao của element đó
-
-  if (maxHeight !== "0px" && maxHeight !== "none") {
-    targetElement.style.maxHeight = "0px"; // Thu nhỏ lại khi ẩn
-    targetElement.style.maxWidth = "0px"; // Thu nhỏ lại khi ẩn
-  }
-}
-
 // Hàm tính toán và hiển thị tỉ lệ giảm giá =====================================
 function tinhTiLe() {
   var lastPrice = parseFloat(document.getElementById("last_price").value);

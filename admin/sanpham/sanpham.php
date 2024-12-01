@@ -294,263 +294,7 @@
           </div>
         </form>
       </div>
-      <!-- edit sản phẩm -->
-      <div class="container_editsp">
-        <form action="#">
-          <div class="title_form">
-            <div class="title">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                width="25px"
-                hight="25px"
-              >
-                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                <path
-                  d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-96c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7-14.3 32-32 32L96 448c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 64z"
-                />
-              </svg>
-              <p>Sửa thông tin sản phẩm</p>
-            </div>
-            <div class="btn_cancell">
-              <button type="button" onclick="Cancell_edit()">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 384 512"
-                  width="18px"
-                  hight="18px"
-                >
-                  <path
-                    d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="addsp_container row">
-            <div class="container_addspleft col-6">
-              <!-- name -->
-              <div class="mb-2 p-2">
-                <label for="name_sua" class="form-label"
-                  >Tên sản phẩm</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name_sua"
-                  placeholder="Nhập tên sản phẩm"
-                  
-                />
-              </div>
 
-              <!-- price -->
-              <div class="p-2">
-                <label for="last_price_sua" class="form-label">Giá sản phẩm</label>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="price">$</span>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Nhập giá sản phẩm"
-                    id="last_price_sua"
-                    
-                  />
-                  <span class="input-group-text">VNĐ</span>
-                </div>
-              </div>
-
-              <!-- price sell -->
-              <div class="p-2">
-                <label for="giaban_sua" class="form-label">Giá bán </label>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="price">$</span>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Nhập giá sản phẩm"
-                    id="giaban_sua"
-                  />
-                  <span class="input-group-text">VNĐ</span>
-                </div>
-              </div>
-
-              <!-- discount -->
-              <div class="mb-2 p-2">
-                <label for="tile_sua" class="form-label">Tỉ lệ giảm giá</label>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="price">$</span>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="ví dụ bạn nhập 5 ,thì giá thật bằng giá sản phẩm trừ đi 5%"
-                    id="tile_sua"
-                    style="color: red;"
-                  />
-                  <span class="input-group-text">%</span>
-                </div>
-              </div>
-
-              <!-- select danh mục cha -->
-              <div class="p-2 mb-2">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  id="danhmucsp_sua"
-                >
-                  <option value="" selected disabled>Chọn Danh Mục Cha</option>
-                  <option value="1">Nam Cá Tính</option>
-                  <option value="2">Hồng Mạnh Mẽ</option>
-                  <option value="3">Nữ Siêu Mạnh</option>
-                </select>
-              </div>
-
-              <!-- Ảnh sản phẩm -->
-              <div class="mb-2 p-2">
-                <label for="file_anhsp_sua" class="form-label"
-                  >Chọn ảnh sản phẩm</label
-                >
-                <input
-                  class="form-control"
-                  type="file"
-                  id="file_anhsp_sua"
-                  
-                />
-              </div>
-
-              <!-- Ảnh chi tiết sp -->
-              <div class="mb-3 p-2">
-                <label for="chitiet_anhsp_sua" class="form-label"
-                  >Chọn danh sách ảnh chi tiết sản phẩm</label
-                >
-                <input
-                  class="form-control"
-                  type="file"
-                  id="chitiet_anhsp_sua"
-                  multiple
-                  
-                />
-              </div>
-            </div>
-            <div class="container_addspright col-6">
-              <!-- xuất xứ -->
-              <div class="mb-2 p-2">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >Xuất xứ sản phẩm</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="Nhập xuất xứ"
-                  
-                />
-              </div>
-              <!-- Thương hiệu -->
-              <div class="mb-2 p-2">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >Tên thương hiệu</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="Nhập tên thương hiệu sản phẩm"
-                  
-                />
-              </div>
-
-              <!-- Đối tượng -->
-              <div class="mb-2 p-2">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >Đối tượng</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="Ví dụ: Nam, Nữ"
-                  
-                />
-              </div>
-
-              <!-- select loại máy -->
-              <div class="mb-2 p-2">
-                <label for="loaimay" class="form-label"
-                  >Loại máy</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="loaimay"
-                  placeholder="Nhập loại máy"
-                />
-              </div>
-
-
-
-              <!-- Chất liệu dây -->
-              <div class="mb-2 p-2">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >Chất liệu dây</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="Nhập chất liệu dây đồng hồ"
-                  
-                />
-              </div>
-
-              <!-- kháng nước -->
-
-              <div class="mb-2 p-2">
-                <label for="khangnuoc" class="form-label"
-                  >Kháng nước</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="khangnuoc"
-                  placeholder="vd: Có or Không"
-        
-                />
-              </div>
-
-              <!-- chát liệu kính-->
-              <div class="mb-2 p-2">
-                <label for="chatlieu" class="form-label"
-                  >Chất liệu kính</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="chatlieu"
-                  placeholder="Nhập chất liệu kính "
-                />
-              </div>
-            </div>
-          </div>
-          <!-- Nút submit -->
-          <div class="d-flex p-2">
-            <button type="submit" class="btn btn-success ms-auto" onclick="return ktform_sua_sp()">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-                width="20px"
-                hight="20px"
-                fill="white"
-              >
-                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                <path
-                  d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 128-168 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l168 0 0 112c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zM384 336l0-48 110.1 0-39-39c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l80 80c9.4 9.4 9.4 24.6 0 33.9l-80 80c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l39-39L384 336zm0-208l-128 0L256 0 384 128z"
-                />
-              </svg>
-              Save Edit
-            </button>
-          </div>
-        </form>
-      </div>
       <!-- container table sản phẩm -->
       <div class="container_tbsp">
         <div class="title_tbsp">
@@ -598,6 +342,7 @@
               <tr>
                 <th>ID</th>
                 <th>Tên sản phẩm</th>
+                <th>Danh mục</th>
                 <th>Ảnh sản phẩm</th>
                 <th>Giá bán</th>
                 <th>Ngày thêm</th>
@@ -607,16 +352,22 @@
             <tbody>
               <!-- show sản phẩm lên -->
               <?php
+              // Tạo ánh xạ ID danh mục => Tên danh mục
+              $danhmuc_map = array_column($listdanhmuc, 'name', 'id');
               foreach($listsanpham as $sanpham){
                   extract($sanpham);
+                  $path_anhsp= "../uploads/".$anhsp;
                   $xoasp = "index.php?act=xoasp&id=".$id;
+                  $suasp = "index.php?act=showsp&id=".$id;
+                  $ten_danhmuc = $danhmuc_map[$iddm] ?? "Không rõ"; // Lấy tên danh mục từ ánh xạ
                   echo '<tr>
                   <td>'.$id.'</td>
                   <td>'.$name.'</td>
+                  <td>'.$ten_danhmuc.'</td>
                   <td>
                     <img
-                      src="../img/watch.png"
-                      alt="icon"
+                      src="'.$path_anhsp.'"
+                      alt="ảnh sản phẩm"
                       style="
                         width: auto;
                         height: 100%;
@@ -629,8 +380,10 @@
                   </td>
                   <td>'.$giaban.'</td>
                   <td>'.$create_at.'</td>
+
                   <td>
-                    <button class="btn_sua" onclick="ShowEditSP()">
+                    <button class="btn_sua">
+                     <a href="'.$suasp.'">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512"
@@ -643,10 +396,10 @@
                           d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1 0 32c0 8.8 7.2 16 16 16l32 0zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
                         />
                       </svg>
-                      Sửa
+                      Sửa</a>
                     </button>
                     <button class="btn_xoa">
-                      <a href="'.$xoasp.'">
+                      <a href="'.$xoasp.'" onclick="return confirm(\'Bạn chắc chắn muốn xóa sản phẩm này?\')">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 448 512"

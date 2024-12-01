@@ -176,7 +176,7 @@
                                   Sửa </a>
                                 </button>
                                 <button class="btn_xoa">
-                                  <a href="'.$xoadm.'">
+                                  <a href="'.$xoadm.'" onclick="return confirm(\'Bạn chắc chắn muốn xóa danh mục sản phẩm này?\')">
                                     <svg
                                       xmlns="http://www.w3.org/2000/svg"
                                       viewBox="0 0 448 512"

@@ -1,4 +1,9 @@
 <style>
+          /* khi được select */
+        header .main_menu ul li:first-child a {
+          color: white;
+        }
+
         .title {
           display: flex;
           gap: 10px;
