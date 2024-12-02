@@ -67,8 +67,7 @@
                     $giagoc = $_POST['giagoc'];
                     $giaban = $_POST['giaban'];
                     $tilegiam = $_POST['tilegiam'];
-                    $danhmuc = $_POST['danhmuc'];
-                    $anhsp = $_POST['anhsp'];
+                    $iddm = $_POST['danhmuc'];
                     $xuatxu = $_POST['xuatxu'];
                     $tenthuonghieu = $_POST['tenthuonghieu'];
                     $doituong = $_POST['doituong'];
@@ -110,7 +109,7 @@
                 // Lấy danh sách sản phẩm và danh mục để hiển thị trong giao diện
                 $listsanpham = loadall_sanpham(); 
                 $listdanhmuc = loadall_danhmuc(); 
-                include 'sanpham/sanpham.php';
+                header('location: index.php?act=sanpham');
                 break;
                     
             case 'xoasp':
@@ -146,9 +145,9 @@
                     }
                     delete_sanpham($id);
                 }
-                $listsanpham=loadall_sanpham(); 
+                $listsanpham = loadall_sanpham(); 
                 $listdanhmuc = loadall_danhmuc(); 
-                include 'sanpham/sanpham.php';
+                header('location: index.php?act=sanpham');
                 break;
             case 'showsp':
                 if(isset($_GET['id']) && ($_GET['id']> 0)){
@@ -160,9 +159,103 @@
                 break;
                 
             case 'updatesp':
-                if(isset($_GET['id']) && ($_GET['id']> 0)){
-                    $id = $_GET['id'];
+                if (isset($_POST['updatesp']) && ($_POST['updatesp'])) {
+                    // Lấy thông tin từ form
+                    $id = $_POST['id'];
+                    $name = $_POST['name'];
+                    $giagoc = $_POST['giagoc'];
+                    $giaban = $_POST['giaban'];
+                    $tilegiam = $_POST['tilegiam'];
+                    $iddm = $_POST['iddm'];
+                    $xuatxu = $_POST['xuatxu'];
+                    $tenthuonghieu = $_POST['tenthuonghieu'];
+                    $doituong = $_POST['doituong'];
+                    $loaimay = $_POST['loaimay'];
+                    $chatlieuday = $_POST['chatlieuday'];
+                    $khangnuoc = $_POST['khangnuoc'];
+                    $chatlieukinh = $_POST['chatlieukinh'];
+                
+            
+                    $target_dir = "../uploads/";
+                    $ctsp = chitietsp($id);
+                    // 1. Xử lý ảnh chính (anhsp)
+                    if (isset($_FILES['anhsp']) && ($_FILES['anhsp']['error'] == UPLOAD_ERR_OK)) {
+                        if (is_array($ctsp)) {
+                            extract($ctsp); // Lấy thông tin sản phẩm cũ
+                            $tenfile = $target_dir . $anhsp;
+                            if (is_file($tenfile)) {
+                                unlink($tenfile); // Xóa ảnh sản phẩm cũ
+                            }
+                        }
+                        // Tải ảnh mới lên
+                        $anhsp = time() . '_' . basename($_FILES['anhsp']['name']);
+                        $target_file_anhsp = $target_dir . $anhsp;
+                        if (!move_uploaded_file($_FILES['anhsp']['tmp_name'], $target_file_anhsp)) {
+                            die("Lỗi khi tải lên ảnh sản phẩm chính.");
+                        }
+                    }
+                    $target_dir = "../uploads/";
+                    $ctsp = chitietsp($id);
+                    // 2. Xử lý ảnh chi tiết sản phẩm
+                    if (isset($_FILES['anhchitiet']) && !empty($_FILES['anhchitiet']['name'][0])) {
+                        if(is_array($ctsp)) {
+                            extract($ctsp);
+                        }
+                        // Kiểm tra và xóa các ảnh chi tiết
+                        if ($anhchitiet) {
+                            // Tách các ảnh chi tiết thành mảng, sử dụng dấu ',' làm ký tự phân tách
+                            $anhchitiet_arr = explode(',', $anhchitiet);
+                        
+                            // Duyệt qua từng ảnh và kiểm tra xóa
+                            foreach ($anhchitiet_arr as $file_path) {
+                                $file_path = trim($file_path); // Loại bỏ khoảng trắng thừa
+                                $full_path = $target_dir . $file_path; // Đường dẫn đầy đủ tới ảnh chi tiết
+                        
+                                // Kiểm tra xem file có tồn tại không và xóa nếu có
+                                if (is_file($full_path)) {
+                                    unlink($full_path); // Xóa ảnh
+                                }
+                            }
+
+                        // Tải ảnh chi tiết mới lên
+                        $anhchitiet = $_FILES['anhchitiet']; // Mảng chứa thông tin các file
+                        $file_paths = array(); // Mảng lưu đường dẫn các file đã upload thành công
+                    
+                        // Duyệt qua tất cả các file được upload
+                        for ($i = 0; $i < count($anhchitiet['name']); $i++) {
+                            $filename = $anhchitiet['name'][$i]; // Tên file gốc
+                            $anh_chitiet = time() . '_' . basename($filename); // Tạo tên duy nhất cho file
+                            $target_anhchitiet = $target_dir . $anh_chitiet; // Đường dẫn lưu file
+                    
+                            // Kiểm tra và di chuyển file vào thư mục
+                            if (move_uploaded_file($anhchitiet['tmp_name'][$i], $target_anhchitiet)) {
+                                $file_paths[] = $anh_chitiet; // Lưu đường dẫn vào mảng
+                            } else {
+                                echo "Lỗi tải lên ảnh chi tiết: " . $filename;
+                            }
+                        }
+                    
+                        // Chuyển mảng đường dẫn thành chuỗi phân tách bởi dấu phẩy
+                        if (!empty($file_paths)) {
+                            $anhchitiet_str = implode(",", $file_paths); // Cập nhật chuỗi ảnh chi tiết mới
+                        } else {
+                            $anhchitiet_str = null; // Nếu không có ảnh nào được tải lên
+                        }
+                    }
+                    
+
+                    }
+                    var_dump($_POST);
+                //update sp
+                updatesp($id,$name,$giagoc,$giaban,$tilegiam,$iddm,$xuatxu,$tenthuonghieu,$doituong,$loaimay,$chatlieuday,$khangnuoc,$chatlieukinh,$anhsp,$anhchitiet_str);
                 }
+                
+                // Lấy danh sách sản phẩm và danh mục để hiển thị lại giao diện
+                $listsanpham = loadall_sanpham(); 
+                $listdanhmuc = loadall_danhmuc(); 
+                header('location: index.php?act=sanpham');
+                break;
+                
 
 
             case 'donhang':

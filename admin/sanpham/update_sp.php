@@ -110,6 +110,7 @@
             id="name_sua"
             placeholder="Nhập tên sản phẩm"
             value="<?=$name?>"
+            name="name"
             
         />
         </div>
@@ -125,6 +126,7 @@
             placeholder="Nhập giá sản phẩm"
             id="last_price_sua"
             value="<?=$giagoc?>"
+            name="giagoc"
             />
             <span class="input-group-text">VNĐ</span>
         </div>
@@ -141,6 +143,7 @@
             placeholder="Nhập giá sản phẩm"
             id="giaban_sua"
             value="<?=$giaban?>"
+            name="giaban"
             />
             <span class="input-group-text">VNĐ</span>
         </div>
@@ -158,6 +161,8 @@
             id="tile_sua"
             style="color: red;"
             value="<?=$tilegiam?>"
+            name="tilegiam"
+            readonly
             />
             <span class="input-group-text">%</span>
         </div>
@@ -169,6 +174,7 @@
             class="form-select"
             aria-label="Default select example"
             id="danhmucsp_sua"
+            name="iddm"
         >
             <option value="" selected disabled>Chọn Danh Mục Cha</option>
                 <?php 
@@ -180,6 +186,7 @@
                 ?>
         </select>
         </div>
+
 
         <!-- Ảnh sản phẩm -->
          <?php 
@@ -202,7 +209,8 @@
         <input
             class="form-control"
             type="file"
-            id="file_anhsp_sua"            
+            id="file_anhsp_sua"    
+            name="anhsp"        
         />
         </div>
 
@@ -232,6 +240,7 @@
             class="form-control"
             type="file"
             id="chitiet_anhsp_sua"
+            name="anhchitiet[]"
             multiple
             
         />
@@ -251,7 +260,7 @@
             id="exampleFormControlInput1"
             placeholder="Nhập xuất xứ"
             value="<?=$xuatxu?>"
-            
+            name="xuatxu"
         />
         </div>
         <!-- Thương hiệu -->
@@ -265,6 +274,7 @@
             id="exampleFormControlInput1"
             placeholder="Nhập tên thương hiệu sản phẩm"
             value="<?=$tenthuonghieu?>"
+            name="tenthuonghieu"
             
         />
         </div>
@@ -280,6 +290,7 @@
             id="exampleFormControlInput1"
             placeholder="Ví dụ: Nam, Nữ"
             value="<?=$doituong?>"
+            name="doituong"
             
         />
         </div>
@@ -295,6 +306,7 @@
             id="loaimay"
             placeholder="Nhập loại máy"
             value="<?=$loaimay?>"
+            name="loaimay"
         />
         </div>
 
@@ -311,6 +323,7 @@
             id="exampleFormControlInput1"
             placeholder="Nhập chất liệu dây đồng hồ"
             value="<?=$chatlieuday?>"
+            name="chatlieuday"
             
         />
         </div>
@@ -327,6 +340,7 @@
             id="khangnuoc"
             placeholder="vd: Có or Không"
             value="<?=$khangnuoc?>"
+            name="khangnuoc"
         />
         </div>
 
@@ -341,12 +355,19 @@
             id="chatlieu"
             placeholder="Nhập chất liệu kính "
             value="<?=$chatlieukinh?>"
+            name="chatlieukinh"
         />
         </div>
             <!-- Nút submit -->
+        <?php
+            //nếu $sanpham tồn tại thì extract nó ra // get lại biến $id vì bên trên dùng $listdanhmuc để get dm
+            if (is_array($sanpham)){
+                extract($sanpham);
+            }
+        ?>
         <input type="hidden" name="id" value="<?=$id?>">
         <div class="d-flex p-2">
-            <button type="submit" class="btn btn-success ms-auto" value="1" onclick="return ktform_sua_sp()">
+            <button type="submit" class="btn btn-success ms-auto" value="1" name="updatesp" onclick="return ktform_sua_sp()">
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
@@ -367,7 +388,7 @@
 
 </form>
 </div>
->
+
     <!-- scripbootstrap -->
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
