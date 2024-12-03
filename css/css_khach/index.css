@@ -14,7 +14,7 @@ navbar
 nav .nav_container {
   width: 100%;
   height: 60px;
-  background-color: white;
+  background-color: #f2f3f4;
   margin-top: 0px;
   margin-bottom: 0px;
   display: flex;
@@ -23,6 +23,11 @@ nav .nav_container {
   align-items: center;
   gap: 50px;
 }
+.logo a {
+  text-decoration: none;
+  color: black;
+}
+
 .logo_xx {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin-top: 15px;
@@ -164,7 +169,7 @@ nav.luxury {
   font-size: 0.9rem;
   transition: 0.5s;
 }
-.btn {
+.btn_search {
   width: 30px;
   height: 25px;
   padding: 15px;

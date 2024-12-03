@@ -25,7 +25,7 @@ function changeValue(button, step) {
 
   //set lại giá trị tiền vào price
   parent.querySelector(
-    ".price"
+    ".prices"
   ).innerHTML = `${fomat_total_price} <span>₫</span>`;
 
   price_Total();
@@ -42,7 +42,7 @@ function price_Total() {
   // Lặp qua từng thẻ cha
   listProducts.forEach((product) => {
     // Tìm thẻ con có class "price"
-    const priceElement = product.querySelector(".price");
+    const priceElement = product.querySelector(".prices");
 
     if (priceElement) {
       // Lấy nội dung text và loại bỏ dấu chấm, ký tự ₫
@@ -74,7 +74,7 @@ function price_Save() {
   // Lặp qua từng thẻ cha
   listProducts.forEach((product) => {
     // Tìm thẻ con có class "last_price"
-    const priceElement = product.querySelector(".last_price");
+    const priceElement = product.querySelector(".last_prices");
     // Tìm thẻ input con có class "number-input" trong từng sản phẩm
     const input = product.querySelector(".number-input input");
 

@@ -257,10 +257,12 @@
                 break;
                 
 
-
+            // bang don hang
             case 'donhang':
                 include 'donhang/donhang.php';
                 break;
+
+            
             
             default:
                 include "home.php";

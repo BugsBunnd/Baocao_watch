@@ -1,26 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thanh toán</title>
 
-    <!-- css bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <!-- css dataTable -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
-    />
-    <!-- css của giohang_thanhtoan -->
-    <link rel="stylesheet" href="../css/css_khach/thanhtoan.css" />
-  </head>
-  <body>
+<!-- css của giohang_thanhtoan -->
+<link rel="stylesheet" href="/WatchShop/css/css_khach/thanhtoan.css" />
     <!-- Bảng chi tiết đơn hàng -->
     <div class="container_chitietdh">
       <div class="container_title">
@@ -63,15 +43,15 @@
               </svg>
             </div>
             <div class="image_product">
-              <img src="../img/watch_002.webp" alt="ảnh đồng hồ" />
+              <img src="/WatchShop/img/watch_002.webp" alt="ảnh đồng hồ" />
             </div>
             <div class="container_name_price">
               <div class="name">Đồng Hồ Nam Thanh Lịch Cá tính</div>
-              <div class="list_price">
+              <div class="list_price list_r">
                 <!-- Ẩn để cập nhật giá gốc -->
                 <div class="giagoc" hidden>40.000.000</div>
-                <div class="price">40.000.000 <span>₫</span></div>
-                <div class="last_price">50.000.000 <span>₫</span></div>
+                <div class="prices">40.000.000 <span>₫</span></div>
+                <div class="last_prices">50.000.000 <span>₫</span></div>
                 <div class="number-input">
                   <button onclick="changeValue(this, -1)">-</button>
                   <input
@@ -105,14 +85,15 @@
               </svg>
             </div>
             <div class="image_product">
-              <img src="../img/watch_002.webp" alt="ảnh đồng hồ" />
+              <img src="/WatchShop/img/watch_002.webp" alt="ảnh đồng hồ" />
             </div>
             <div class="container_name_price">
               <div class="name">Đồng Hồ Nam Thanh Lịch Cá tính</div>
-              <div class="list_price">
-                <div class="giagoc" hidden>2.000.000</div>
-                <div class="price">2.000.000 <span>₫</span></div>
-                <div class="last_price">3.000.000 <span>₫</span></div>
+              <div class="list_price ">
+                <!-- Ẩn để cập nhật giá gốc -->
+                <div class="giagoc" hidden>40.000.000</div>
+                <div class="prices">40.000.000 <span>₫</span></div>
+                <div class="last_prices">50.000.000 <span>₫</span></div>
                 <div class="number-input">
                   <button onclick="changeValue(this, -1)">-</button>
                   <input
@@ -129,6 +110,7 @@
             </div>
           </div>
         </div>
+
       </div>
 
       <div class="total_price">
@@ -265,7 +247,7 @@
 
         <!-- Người khác nhận -->
         <div class="nguoikhacnhan">
-          <div class="container mt-4">
+          <div class="p-2 mt-4">
             <!-- Checkbox -->
             <div class="form-check">
               <input
@@ -361,7 +343,7 @@
               <div class="infopayment">
                 <div class="img">
                   <img
-                    src="../img/logo_bank.png"
+                    src="/WatchShop/img/logo_bank.png"
                     alt="Vietcombank"
                     width="45px"
                     height="45px"
@@ -376,8 +358,10 @@
           </div>
         </div>
 
-        <div class="d-grid gap-2 col-6 mx-auto mt-4 mb-2">
-          <button class="btn btn-primary py-3">Hoàn tất đơn hàng</button>
+        <div class="btn_hoantat">
+            <div class="d-grid gap-2 col-6 mx-auto mt-4 mb-2">
+            <button class="btn btn-primary py-3">Hoàn tất đơn hàng</button>
+            </div>
         </div>
 
         <div class="textdieukhoan">
@@ -394,6 +378,4 @@
       crossorigin="anonymous"
     ></script>
     <!-- js của mình -->
-    <script src="../js/js_khach/thanhtoan.js"></script>
-  </body>
-</html>
+    <script src="/WatchShop/js/js_khach/thanhtoan.js"></script>

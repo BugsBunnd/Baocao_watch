@@ -23,7 +23,7 @@
   background-color: rgb(240, 237, 237);
   margin: auto;
   border-radius: 8px;
-  margin-top: 0px;
+  margin-top: 20px;
   margin-bottom: 10px;
   transition: height 1s ease, max-width 1s ease; /* Hiệu ứng mượt mà */
 }
@@ -98,22 +98,22 @@
   text-align: right;
 }
 
-.container_chitietdh .container_name_price .price {
+.container_chitietdh .container_name_price .prices {
   color: #dd042d;
   font-weight: bold;
   font-size: 1.1rem;
 }
-.container_chitietdh .container_name_price .price span {
+.container_chitietdh .container_name_price .prices span {
   font-size: 1rem;
 }
 
-.container_chitietdh .container_name_price .last_price {
+.container_chitietdh .container_name_price .last_prices {
   color: gray;
   text-decoration: line-through;
   font-size: 1.1rem;
 }
 
-.container_chitietdh .container_name_price .last_price span {
+.container_chitietdh .container_name_price .last_prices span {
   font-size: 1rem;
 }
 
@@ -292,4 +292,9 @@
   font-size: 0.8rem;
   color: #808080;
   margin-bottom: 10px;
+}
+
+.btn_hoantat button {
+  height: 50px;
+  border-radius: 8px;
 }
