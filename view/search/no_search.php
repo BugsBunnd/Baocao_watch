@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tìm kiếm no result</title>
-  </head>
-  <body>
-    <style>
+<style>
       body {
         font-family: Arial, Helvetica, sans-serif;
       }
       .container_noresult {
         width: 100%;
-        height: auto;
+        height: 430px;
         justify-content: center;
-
         margin-bottom: 20px;
         margin-top: 20px;
         padding: 20px;
@@ -31,7 +22,7 @@
       .chuy {
         text-align: center;
       }
-    </style>
+  </style>
     <div class="container_noresult">
       <div class="icon">
         <svg
@@ -52,7 +43,7 @@
         </svg>
       </div>
       <div class="thongbao">
-        <p>Không tìm thấy sản phẩm nào có từ khóa: jdfhsdgfsdlgkjsfljbg</p>
+        <p>Không tìm thấy sản phẩm nào có từ khóa: <?=$kyw?></p>
       </div>
       <div class="chuy">
         <p>
@@ -61,5 +52,3 @@
         </p>
       </div>
     </div>
-  </body>
-</html>

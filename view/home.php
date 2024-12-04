@@ -129,9 +129,9 @@
                   <p class="describe">
                     <a href="'.$chitietsp.'">'.$name.'</a>
                   </p>
-                  <p class="price">'.$giaban.' VNĐ</p>
+                  <p class="price">'. number_format($giaban, 0, ',', '.') .' đ</p>
                   <p class="last_price">
-                    <span class="price_last">'.$giagoc.' VNĐ</span>
+                    <span class="price_last">'. number_format($giagoc, 0, ',', '.') .' đ</span>
                     <span class="rate_down">-'.$tilegiam.'%</span>
                   </p>
 

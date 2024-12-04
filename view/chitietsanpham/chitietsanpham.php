@@ -1,3 +1,10 @@
+<?php
+    if(isset($sanpham)&& is_array($sanpham)){
+        extract($sanpham);
+    }
+
+?>
+
 <link rel="stylesheet" href="/WatchShop/css/css_khach/chitietsanpham.css">
 
 <div class="main_product">
@@ -5,7 +12,7 @@
 
     <div class="link_logic">
     <div class="trangchu">
-        <a href="">
+        <a href="index.php">
         <!-- icon trang chủ -->
         <svg
             width="14"
@@ -35,7 +42,7 @@
 
     <div class="namesp">
     <div class="name">
-        <p>Đồng Hồ Orient - Nam RA-AR0005Y30B (RA-AR0005Y10B)</p>
+        <p><?=$name?></p>
     </div>
     <!-- ngôi sao đánh giá -->
     <div class="danhgia">
@@ -47,6 +54,24 @@
     </div>
     </div>
 
+    <!-- get link anh ra -->
+    <?php
+        $path_anh_sp = "/WatchShop/uploads/".$anhsp;
+
+        $anh_chitiet_array = explode(",", $anhchitiet);
+        // Kiểm tra và lấy 3 ảnh chi tiết
+        if (isset($anh_chitiet_array[0])) {
+            $path_anh_ct1 = "/WatchShop/uploads/" . $anh_chitiet_array[0];
+        }
+        if (isset($anh_chitiet_array[1])) {
+            $path_anh_ct2 = "/WatchShop/uploads/" . $anh_chitiet_array[1];
+        }
+        if (isset($anh_chitiet_array[2])) {
+            $path_anh_ct3 = "/WatchShop/uploads/" . $anh_chitiet_array[2];
+        }
+        
+    ?>
+
     <div class="main_content row">
     <!-- carosel -->
     <div class="ctn_carosel col-6 ms-4">
@@ -54,77 +79,64 @@
         <div id="carouselExampleIndicators" class="carousel slide">
             <!-- Nút chỉ báo tiến trình -->
             <div class="carousel-indicators">
-            <button
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Slide 1"
-            ></button>
-            <button
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"
-            ></button>
-            <button
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="2"
-                aria-label="Slide 3"
-            ></button>
-            <button
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="3"
-                aria-label="Slide 4"
-            ></button>
-            <button
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="4"
-                aria-label="Slide 5"
-            ></button>
+                <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="3"
+                    aria-label="Slide 4"
+                ></button>
             </div>
 
             <!-- Hình ảnh carousel -->
             <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img
-                src="/WatchShop/img/watch_1/1.webp"
-                class="d-block w-100"
-                alt="..."
-                />
-            </div>
-            <div class="carousel-item">
-                <img
-                src="/WatchShop/img/watch_1/2.webp"
-                class="d-block w-100"
-                alt="..."
-                />
-            </div>
-            <div class="carousel-item">
-                <img
-                src="/WatchShop/img/watch_1/3.webp"
-                class="d-block w-100"
-                alt="..."
-                />
-            </div>
-            <div class="carousel-item">
-                <img
-                src="/WatchShop/img/watch_1/4.webp"
-                class="d-block w-100"
-                alt="..."
-                />
-            </div>
-            <div class="carousel-item">
-                <img
-                src="/WatchShop/img/watch_1/5.webp"
-                class="d-block w-100"
-                alt="..."
-                />
-            </div>
+                <div class="carousel-item active">
+                    <img
+                    src="<?=$path_anh_sp?>"
+                    class="d-block w-100"
+                    alt="..."
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                    src="<?=$path_anh_ct1?>"
+                    class="d-block w-100"
+                    alt="..."
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                    src="<?=$path_anh_ct2?>"
+                    class="d-block w-100"
+                    alt="..."
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                    src="<?=$path_anh_ct3?>"
+                    class="d-block w-100"
+                    alt="..."
+                    />
+                </div>
             </div>
 
             <!-- Nút điều hướng -->
@@ -159,14 +171,14 @@
     <!-- Thông tin giá cả -->
     <div class="info_product col-6">
         <div class="ctn_price">
-        <div class="price_sanpham">875.000.000 <span>₫</span></div>
-        <div class="last_price_sanpham">900.000.000 <span>₫</span></div>
-        <div class="percent">30%</div>
+        <div class="price_sanpham"><?= $giaban ?> <span>₫</span></div>
+        <div class="last_price_sanpham"><?= $giagoc ?> <span>₫</span></div>
+        <div class="percent">- <?= $tilegiam ?>%</div>
         </div>
         <div class="xuatxu">
         <p>
-            Chính hãng từ: <span id="thuonghieu">Orient</span> - Xuất xứ:
-            <span id="xuatxu">Nhật Bản</span>
+            Chính hãng từ: <span id="thuonghieu"><?= $tenthuonghieu ?></span> - Xuất xứ:
+            <span id="xuatxu"><?= $xuatxu ?></span>
         </p>
         </div>
 
@@ -317,24 +329,24 @@
             <div id="sharedCollapse" class="collapse_chitiet show ms-0">
             <div class="card card-body">
                 <!-- Nội dung được định nghĩa sẵn trong HTML -->
-                <div id="content-product-details" class="active">
-                <h5>Thông số sản phẩm - Orient RA-AR0005Y30B</h5>
+                <div id="content-product-details" class="active content">
+                <h5>Thông số sản phẩm - <?= $name ?></h5>
                 <div class="table_thongso">
                     <table>
                     <tr>
-                        <td><b>Thương hiệu: </b>Orient</td>
-                        <td><b>Xuất xứ: </b>Nhật Bản</td>
+                        <td><b>Thương hiệu: </b><?= $tenthuonghieu ?></td>
+                        <td><b>Xuất xứ: </b><?= $xuatxu ?></td>
                     </tr>
                     <tr>
-                        <td><b>Đối tượng: </b>Nam</td>
-                        <td><b>Kháng nước: </b>5atm</td>
+                        <td><b>Đối tượng: </b><?= $doituong ?></td>
+                        <td><b>Kháng nước: </b><?= $khangnuoc ?></td>
                     </tr>
                     <tr>
-                        <td><b>Loại máy: </b>Cơ tự động</td>
-                        <td><b>Chất liệu kính: </b>kính Sapphire</td>
+                        <td><b>Loại máy: </b><?= $loaimay ?></td>
+                        <td><b>Chất liệu kính: </b><?= $chatlieukinh ?></td>
                     </tr>
                     <tr>
-                        <td><b>Chất liệu dây: </b>Dây Da</td>
+                        <td><b>Chất liệu dây: </b><?= $chatlieuday ?></td>
                         <td><b>Size mặt: </b>40.8mm</td>
                     </tr>
                     <tr>

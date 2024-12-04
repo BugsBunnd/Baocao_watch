@@ -5,21 +5,26 @@ window.onload = () => {
 
 //Get chi tiết sản phẩm -  Bảo hành - Hướng dẫn chọn size
 function selectButton(buttonId, contentId) {
-  var buttons = document.querySelectorAll(".btn-option");
-  var contents = document.querySelectorAll(".collapse_chitiet .content");
+  // Ẩn tất cả các nội dung
+  const contents = document.querySelectorAll(".content");
+  contents.forEach((content) => content.classList.remove("active"));
 
-  buttons.forEach(function (button) {
-    button.classList.remove("active");
-  });
-  contents.forEach(function (content) {
-    content.classList.remove("active");
-  });
-
-  document.getElementById(buttonId).classList.add("active");
+  // Hiển thị nội dung được chọn
   document.getElementById(contentId).classList.add("active");
 
-  var collapseContent = document.getElementById(contentId);
-  collapseContent.style.height = "auto"; // Đảm bảo chiều cao tự động khi mở
+  // Đảm bảo khung collapse luôn hiển thị
+  const collapseElement = document.getElementById("sharedCollapse");
+  const bsCollapse = new bootstrap.Collapse(collapseElement, {
+    toggle: false,
+  });
+  bsCollapse.show();
+
+  // Loại bỏ lớp 'active' khỏi tất cả các nút
+  const buttons = document.querySelectorAll(".btn-option");
+  buttons.forEach((btn) => btn.classList.remove("active"));
+
+  // Thêm lớp 'active' vào nút được chọn
+  document.getElementById(buttonId).classList.add("active");
 }
 
 // cuộn của nút chi tiết
@@ -53,3 +58,26 @@ document
       behavior: "smooth", // Cuộn mượt mà
     });
   });
+
+//Dịnh dạng 1.000.000 VNĐ cho tiền load từ csdl
+document.addEventListener("DOMContentLoaded", function () {
+  const prices = document.querySelectorAll(".price_sanpham"); // Lấy tất cả các phần tử có class "price"
+
+  prices.forEach((price) => {
+    const number = parseInt(price.textContent); // Chuyển nội dung thành số nguyên
+    if (!isNaN(number)) {
+      price.textContent = number.toLocaleString("vi-VN") + " VNĐ"; // Định dạng theo kiểu Việt Nam
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const prices = document.querySelectorAll(".last_price_sanpham"); // Lấy tất cả các phần tử có class "price"
+
+  prices.forEach((price) => {
+    const number = parseInt(price.textContent); // Chuyển nội dung thành số nguyên
+    if (!isNaN(number)) {
+      price.textContent = number.toLocaleString("vi-VN") + " VNĐ"; // Định dạng theo kiểu Việt Nam
+    }
+  });
+});

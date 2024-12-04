@@ -64,12 +64,15 @@
           </a>
         </div>
         <div class="sreach" id="search_cls">
-          <input
-            type="text"
-            class="input"
-            placeholder="Tìm là thấy..."
-            id="search_text"
-          />
+          <form id="myForm" action="index.php?act=search" method="post">
+            <input
+              type="text"
+              class="input"
+              placeholder="Tìm là thấy..."
+              id="search_text"
+              name="kyw"
+            />
+          </form>
           <button class="btn_search" id="btn_search">
             <i
               title="Tìm kiếm sản phẩm"
