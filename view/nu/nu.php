@@ -94,6 +94,10 @@
       .evaluate {
         margin-top: 10px;
       }
+
+      .nu a {
+        color: red; 
+      }
     </style>
     <div class="container_timkiem">
       <div class="result">

@@ -205,11 +205,6 @@ nav.luxury {
   outline: none;
 }
 
-/* Luôn trong trạng thái "hover" cho .xuhuong */
-.xuhuong a {
-  color: red; /* Màu chữ luôn đỏ */
-}
-
 .xuhuong::after {
   content: "";
   position: absolute;
@@ -317,7 +312,7 @@ end container item
   margin-left: 5px;
   margin-right: 5px;
 }
-.mr {
+.mrtop_10px {
   margin-top: -10px;
 }
 .box img {
@@ -341,6 +336,11 @@ end container item
   margin-top: 10px;
   text-align: center;
   margin-left: 15px;
+}
+
+.describe a {
+  text-decoration: none;
+  color: #212529;
 }
 
 .last_price {
@@ -493,16 +493,17 @@ footer {
   width: 100%;
   height: auto;
   background-color: #333;
+  margin-top: 30px;
 }
 
-footer .content {
+footer .content_footer {
   padding-top: 40px;
   display: flex;
   justify-content: center;
   color: #fdaf17;
   gap: 100px;
 }
-footer .content ul li {
+footer .content_footer ul li {
   list-style-type: none;
   margin-bottom: 20px;
 }
@@ -513,7 +514,7 @@ footer .dc_address {
   cursor: pointer;
 }
 
-footer .content ul li ul li {
+footer .content_footer ul li ul li {
   color: #f8f8f8;
   margin-top: 10px;
   margin-left: -30px;

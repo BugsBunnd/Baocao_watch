@@ -169,7 +169,7 @@
   font-weight: bolder;
 }
 
-.container_chitietdh .total_price .price {
+.container_chitietdh .total_price .price_tong {
   grid-area: price;
   justify-self: end; /* Đẩy sang phải */
   margin-right: 40px;
@@ -178,7 +178,7 @@
   font-size: 1.1rem;
 }
 
-.container_chitietdh .total_price .price span {
+.container_chitietdh .total_price .price_tong span {
   font-size: 1rem;
 }
 

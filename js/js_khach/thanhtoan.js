@@ -41,7 +41,7 @@ function price_Total() {
 
   // Lặp qua từng thẻ cha
   listProducts.forEach((product) => {
-    // Tìm thẻ con có class "price"
+    // Tìm thẻ con có class "prices"
     const priceElement = product.querySelector(".prices");
 
     if (priceElement) {
@@ -60,7 +60,7 @@ function price_Total() {
   //set tổng giá trị đơn hàng
   const parent = document.querySelector(".total_price");
   parent.querySelector(
-    ".price"
+    ".price_tong"
   ).innerHTML = `${fomat_total_price} <span>₫</span>`;
 }
 
@@ -97,7 +97,7 @@ function price_Save() {
   });
 
   //Lấy tổng giá đơn hàng trừ giá trước tiết kiệm
-  const total_price = document.querySelector(".total_price .price");
+  const total_price = document.querySelector(".total_price .price_tong");
   const textPrice = total_price.textContent
     .replace(/\./g, "")
     .replace("₫", "")

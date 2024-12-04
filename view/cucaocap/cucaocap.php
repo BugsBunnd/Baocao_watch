@@ -94,6 +94,9 @@
       .evaluate {
         margin-top: 10px;
       }
+      .cucaocap a {
+        color: red; 
+      }
     </style>
     <div class="container_timkiem">
       <div class="result">

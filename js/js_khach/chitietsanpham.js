@@ -5,26 +5,21 @@ window.onload = () => {
 
 //Get chi tiết sản phẩm -  Bảo hành - Hướng dẫn chọn size
 function selectButton(buttonId, contentId) {
-  // Ẩn tất cả các nội dung
-  const contents = document.querySelectorAll(".content");
-  contents.forEach((content) => content.classList.remove("active"));
+  var buttons = document.querySelectorAll(".btn-option");
+  var contents = document.querySelectorAll(".collapse_chitiet .content");
 
-  // Hiển thị nội dung được chọn
+  buttons.forEach(function (button) {
+    button.classList.remove("active");
+  });
+  contents.forEach(function (content) {
+    content.classList.remove("active");
+  });
+
+  document.getElementById(buttonId).classList.add("active");
   document.getElementById(contentId).classList.add("active");
 
-  // Đảm bảo khung collapse luôn hiển thị
-  const collapseElement = document.getElementById("sharedCollapse");
-  const bsCollapse = new bootstrap.Collapse(collapseElement, {
-    toggle: false,
-  });
-  bsCollapse.show();
-
-  // Loại bỏ lớp 'active' khỏi tất cả các nút
-  const buttons = document.querySelectorAll(".btn-option");
-  buttons.forEach((btn) => btn.classList.remove("active"));
-
-  // Thêm lớp 'active' vào nút được chọn
-  document.getElementById(buttonId).classList.add("active");
+  var collapseContent = document.getElementById(contentId);
+  collapseContent.style.height = "auto"; // Đảm bảo chiều cao tự động khi mở
 }
 
 // cuộn của nút chi tiết
@@ -33,7 +28,7 @@ document
   .addEventListener("click", function () {
     // Cuộn mượt mà xuống cách đầu trang 200px
     window.scrollTo({
-      top: 650, // Cuộn tới vị trí 200px từ trên xuống
+      top: 750, // Cuộn tới vị trí 200px từ trên xuống
       behavior: "smooth", // Cuộn mượt mà
     });
   });
@@ -44,7 +39,7 @@ document
   .addEventListener("click", function () {
     // Cuộn mượt mà xuống cách đầu trang 200px
     window.scrollTo({
-      top: 650, // Cuộn tới vị trí 200px từ trên xuống
+      top: 750, // Cuộn tới vị trí 200px từ trên xuống
       behavior: "smooth", // Cuộn mượt mà
     });
   });
@@ -54,7 +49,7 @@ document
   .addEventListener("click", function () {
     // Cuộn mượt mà xuống cách đầu trang 200px
     window.scrollTo({
-      top: 650, // Cuộn tới vị trí 200px từ trên xuống
+      top: 750, // Cuộn tới vị trí 200px từ trên xuống
       behavior: "smooth", // Cuộn mượt mà
     });
   });

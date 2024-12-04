@@ -6,7 +6,7 @@
   margin-top: 20px;
 }
 
-.link_logic {
+.main_product .link_logic {
   display: flex;
   gap: 10px;
 }
@@ -16,7 +16,7 @@
   padding-top: 1px;
 }
 
-.namesp {
+.main_product .namesp {
   width: 100%;
   height: 40px;
   /* background-color: aqua; */
@@ -88,21 +88,21 @@
   gap: 10px;
 }
 
-.info_product .ctn_price .price {
+.info_product .ctn_price .price_sanpham {
   color: #ed1c24;
   font-weight: bolder;
 }
 
-.info_product .ctn_price .price span {
+.info_product .ctn_price .price_sanpham span {
   font-size: 0.9rem;
 }
 
-.info_product .ctn_price .last_price {
+.info_product .ctn_price .last_price_sanpham {
   color: #999999;
   text-decoration: line-through;
 }
 
-.info_product .ctn_price .last_price span {
+.info_product .ctn_price .last_price_sanpham span {
   font-size: 0.9rem;
 }
 
@@ -177,12 +177,13 @@
 }
 
 /* Xóa viền của collapse */
-.collapse {
+.collapse_chitiet {
   width: 80%;
   border: none;
   margin-top: 20px;
+  margin-bottom: 20px;
+  overflow-y: auto;
 }
-
 .card {
   border: none;
 }
@@ -308,4 +309,9 @@
 
 .evaluate {
   margin-top: 10px;
+}
+
+.container_ttbh {
+  margin-left: 15%;
+  margin-top: -320px;
 }

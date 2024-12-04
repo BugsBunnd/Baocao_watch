@@ -115,7 +115,7 @@
 
       <div class="total_price">
         <div class="lable">Tổng tiền:</div>
-        <div class="price">58.933.000 <span>₫</span></div>
+        <div class="price_tong">59.933.000 <span>₫</span></div>
         <div class="tietkiem">Tiết kiệm: 800.000 <span>₫</span></div>
       </div>
 
@@ -189,37 +189,6 @@
           </div>
         </div>
 
-        <div class="address p-2">
-          <div class="row">
-            <div class="col">
-              <select
-                class="form-select"
-                id="provinceSelect"
-                aria-label="Default select example"
-              >
-                <option disabled selected>Chọn Tỉnh/Thành</option>
-              </select>
-            </div>
-            <div class="col-4">
-              <select
-                class="form-select"
-                id="districtSelect"
-                aria-label="Default select example"
-              >
-                <option selected>Chọn Quận huyện</option>
-              </select>
-            </div>
-            <div class="col-4">
-              <select
-                class="form-select"
-                id="wardSelect"
-                aria-label="Default select example"
-              >
-                <option selected>Chọn Phường/Xã</option>
-              </select>
-            </div>
-          </div>
-        </div>
 
         <div class="text_address p-2">
           <div class="form-floating">
@@ -229,7 +198,7 @@
               id="floatingInput"
               placeholder="name@example.com"
             />
-            <label for="floatingInput">Số nhà, tên đường...</label>
+            <label for="floatingInput">Địa chỉ nhận hàng...</label>
           </div>
         </div>
 

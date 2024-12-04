@@ -94,6 +94,9 @@
       .evaluate {
         margin-top: 10px;
       }
+      .nam a {
+        color: red; 
+      }
     </style>
     <div class="container_timkiem">
       <div class="result">

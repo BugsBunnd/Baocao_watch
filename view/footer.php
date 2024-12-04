@@ -1,6 +1,6 @@
-    <!-- footer -->
+<!-- footer -->
     <footer>
-      <div class="content">
+      <div class="content_footer">
         <ul class="color_content color_title">
           <li>
             VỀ WATCHSHOP.VN

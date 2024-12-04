@@ -5,7 +5,7 @@
         id="carouselExampleControls"
         class="carousel slide"
         data-bs-ride="carousel"
-        data-bs-interval="1000"
+        data-bs-interval="3000"
       >
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -115,269 +115,43 @@
 
     <!-- main-product -->
     <div class="container">
-      <div class="baner"><img src="/img/banner.jpg" alt="" /></div>
-      <div class="mega_box">
-        <div class="box">
-          <img src="/WatchShop/img/watch_2.webp" alt="Đồng hồ" />
-          <p class="describe">
-            Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)
-          </p>
-          <p class="price">450.000.000 VNĐ</p>
-          <p class="last_price">
-            <span class="price_last">500.000.000 VNĐ</span>
-            <span class="rate_down">-50%</span>
-          </p>
+      <div class="baner mb-3"><img src="/WatchShop/img/banner.jpg" alt="baner" /></div>
+      <?php
+      if (!empty($listsanpham) && is_array($listsanpham)){
+        foreach($listsanpham as $sanpham){
+          extract($sanpham);
+          $path_anh = "./uploads/".$anhsp;
+          $chitietsp= "index.php?act=chitietsanpham&id=".$id;
+          echo'
+              <div class="mega_box mrtop_10px">
+                <div class="box">
+                  <img src="'.$path_anh.'" alt="Ảnh sản phẩm" />
+                  <p class="describe">
+                    <a href="'.$chitietsp.'">'.$name.'</a>
+                  </p>
+                  <p class="price">'.$giaban.' VNĐ</p>
+                  <p class="last_price">
+                    <span class="price_last">'.$giagoc.' VNĐ</span>
+                    <span class="rate_down">-'.$tilegiam.'%</span>
+                  </p>
 
-          <div class="evaluate">
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-          </div>
-        </div>
-      </div>
+                  <div class="evaluate">
+                    <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                    <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                    <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                    <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                    <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                  </div>
+                </div>
+              </div>
+          ';
+        }
+      } else{
+        echo "Không có sản phẩm !!";
+      }
+      ?>
 
-      <div class="mega_box">
-        
-        <div class="box">
-          <img src="/WatchShop/img/watch_1.webp" alt="Đồng hồ" />
-          <p class="describe">
-            Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)
-          </p>
-          <p class="price">450.000.000 VNĐ</p>
-          <p class="last_price">
-            <span class="price_last">500.000.000 VNĐ</span>
-            <span class="rate_down">-50%</span>
-          </p>
 
-          <div class="evaluate">
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-          </div>
-        </div>
-      </div>
-      <div class="mega_box">
-        <div class="box">
-          <img src="/WatchShop/img/watch_4.webp" alt="Đồng hồ" />
-          <p class="describe">
-            Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)
-          </p>
-          <p class="price">450.000.000 VNĐ</p>
-          <p class="last_price">
-            <span class="price_last">500.000.000 VNĐ</span>
-            <span class="rate_down">-50%</span>
-          </p>
-
-          <div class="evaluate">
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-          </div>
-        </div>
-      </div>
-      <div class="mega_box">
-        <div class="box">
-          <img src="/WatchShop/img/watch_3.webp" alt="Đồng hồ" />
-          <p class="describe">
-            Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)
-          </p>
-          <p class="price">450.000.000 VNĐ</p>
-          <p class="last_price">
-            <span class="price_last">500.000.000 VNĐ</span>
-            <span class="rate_down">-50%</span>
-          </p>
-
-          <div class="evaluate">
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="mega_box mr">
-        <div class="box">
-          <img src="/WatchShop/img/watch_4.webp" alt="Đồng hồ" />
-          <p class="describe">
-            Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)
-          </p>
-          <p class="price">450.000.000 VNĐ</p>
-          <p class="last_price">
-            <span class="price_last">500.000.000 VNĐ</span>
-            <span class="rate_down">-50%</span>
-          </p>
-
-          <div class="evaluate">
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="mega_box mr">
-        <div class="box">
-          <img src="/WatchShop/img/watch_2.webp" alt="Đồng hồ" />
-          <p class="describe">
-            Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)
-          </p>
-          <p class="price">450.000.000 VNĐ</p>
-          <p class="last_price">
-            <span class="price_last">500.000.000 VNĐ</span>
-            <span class="rate_down">-50%</span>
-          </p>
-
-          <div class="evaluate">
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="mega_box mr">
-        <div class="box">
-          <img src="/WatchShop/img/watch_2.webp" alt="Đồng hồ" />
-          <p class="describe">
-            Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)
-          </p>
-          <p class="price">450.000.000 VNĐ</p>
-          <p class="last_price">
-            <span class="price_last">500.000.000 VNĐ</span>
-            <span class="rate_down">-50%</span>
-          </p>
-
-          <div class="evaluate">
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="mega_box mr">
-        <div class="box">
-          <img src="/WatchShop/img/watch_2.webp" alt="Đồng hồ" />
-          <p class="describe">
-            Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)
-          </p>
-          <p class="price">450.000.000 VNĐ</p>
-          <p class="last_price">
-            <span class="price_last">500.000.000 VNĐ</span>
-            <span class="rate_down">-50%</span>
-          </p>
-
-          <div class="evaluate">
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="mega_box mr">
-        <div class="box">
-          <img src="/WatchShop/img/watch_2.webp" alt="Đồng hồ" />
-          <p class="describe">
-            Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)
-          </p>
-          <p class="price">450.000.000 VNĐ</p>
-          <p class="last_price">
-            <span class="price_last">500.000.000 VNĐ</span>
-            <span class="rate_down">-50%</span>
-          </p>
-
-          <div class="evaluate">
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="mega_box mr">
-        <div class="box">
-          <img src="/WatchShop/img/watch_2.webp" alt="Đồng hồ" />
-          <p class="describe">
-            Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)
-          </p>
-          <p class="price">450.000.000 VNĐ</p>
-          <p class="last_price">
-            <span class="price_last">500.000.000 VNĐ</span>
-            <span class="rate_down">-50%</span>
-          </p>
-
-          <div class="evaluate">
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="mega_box mr">
-        <div class="box">
-          <img src="/WatchShop/img/watch_2.webp" alt="Đồng hồ" />
-          <p class="describe">
-            Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)
-          </p>
-          <p class="price">450.000.000 VNĐ</p>
-          <p class="last_price">
-            <span class="price_last">500.000.000 VNĐ</span>
-            <span class="rate_down">-50%</span>
-          </p>
-
-          <div class="evaluate">
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="mega_box mr">
-        <div class="box">
-          <img src="/WatchShop/img/watch_2.webp" alt="Đồng hồ" />
-          <p class="describe">
-            Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)
-          </p>
-          <p class="price">450.000.000 VNĐ</p>
-          <p class="last_price">
-            <span class="price_last">500.000.000 VNĐ</span>
-            <span class="rate_down">-50%</span>
-          </p>
-
-          <div class="evaluate">
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-          </div>
-        </div>
-      </div>
     </div>
     <!-- end main -->
 

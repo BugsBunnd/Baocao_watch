@@ -30,3 +30,26 @@ document.getElementById("backToTop").onclick = function () {
   });
 };
 //end backToTop
+
+//Dịnh dạng 1.000.000 VNĐ cho tiền load từ csdl
+document.addEventListener("DOMContentLoaded", function () {
+  const prices = document.querySelectorAll(".price"); // Lấy tất cả các phần tử có class "price"
+
+  prices.forEach((price) => {
+    const number = parseInt(price.textContent); // Chuyển nội dung thành số nguyên
+    if (!isNaN(number)) {
+      price.textContent = number.toLocaleString("vi-VN") + " VNĐ"; // Định dạng theo kiểu Việt Nam
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const prices = document.querySelectorAll(".price_last"); // Lấy tất cả các phần tử có class "price"
+
+  prices.forEach((price) => {
+    const number = parseInt(price.textContent); // Chuyển nội dung thành số nguyên
+    if (!isNaN(number)) {
+      price.textContent = number.toLocaleString("vi-VN") + " VNĐ"; // Định dạng theo kiểu Việt Nam
+    }
+  });
+});
