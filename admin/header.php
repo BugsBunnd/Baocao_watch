@@ -35,14 +35,15 @@
       <!-- menu -->
       <div class="menu">
         <div class="logo">
-          <a href="index.php"><img src="../img/Remove.png" alt="WATCHSHOP" /></a>
+          <a href="index.php?act=danhmuc"><img src="../img/Remove.png" alt="WATCHSHOP" /></a>
         </div>
         <div class="main_menu">
           <ul>
-            <li><a href="index.php?act=danhmuc">Danh mục</a></li>
-            <li><a href="index.php?act=sanpham">Sản phẩm</a></li>
-            <li><a href="index.php?act=donhang">Đơn hàng</a></li>
-            <li><a href="index.php?act=giaodien">Giao diện</a></li>
+            <li><a href="index.php?act=danhmuc"><i class="fa-solid fa-layer-group"></i> Danh mục</a></li>
+            <li><a href="index.php?act=sanpham"><i class="fa-solid fa-cart-shopping"></i> Sản phẩm</a></li>
+            <li><a href="index.php?act=donhang"><i class="fa-solid fa-file-invoice"></i> Đơn hàng</a></li>
+            <li><a href="index.php?act=giaodien"><i class="fa-solid fa-brush"></i> Giao diện</a></li>
+            <li><a href="index.php?act=dangxuat"><i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất</a></li>
           </ul>
         </div>
       </div>

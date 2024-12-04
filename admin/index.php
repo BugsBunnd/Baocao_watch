@@ -1,4 +1,12 @@
 <?php
+    session_start();
+
+    // Kiểm tra xem người dùng đã đăng nhập chưa
+    if (!isset($_SESSION['s_user']) || !is_array($_SESSION['s_user']) || count($_SESSION['s_user']) == 0) {
+        // Nếu chưa đăng nhập, chuyển hướng về trang login.php
+        header('Location: login.php');
+        exit();
+    }
 
     include "../model/pdo.php";
     include "../model/danhmuc.php";
@@ -14,6 +22,9 @@
                 $listdanhmuc = loadall_danhmuc();
                 include 'danhmuc/danhmuc.php';
                 break;
+                
+                
+
 
             case 'adddm':
                 if (isset($_POST['themmoi']) && ($_POST['themmoi'])){
@@ -263,15 +274,23 @@
                 break;
 
             
-            
+            //đăn xuất
+            case 'dangxuat':
+                include 'logout.php';
+                break;
+    
+
+        
             default:
-                include "home.php";
+                $listdanhmuc = loadall_danhmuc();
+                include 'danhmuc/danhmuc.php';
                 break;
             }
 
 
     }else{
-        include "home.php";
+        $listdanhmuc = loadall_danhmuc();
+        include 'danhmuc/danhmuc.php';
     }
 
 
