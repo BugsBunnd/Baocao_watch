@@ -183,28 +183,39 @@
         </div>
 
         <!-- button mua luôn -->
-        <div class="btn_mua d-flex">
-        <button
-            type="button"
-            class="btn btn-primary btn-lg w-50 py-2"
-            style="font-size: 14px"
-        >
-            Mua ngay Free-ship <br />
-            Kiểm tra hàng trước khi thanh toán
-        </button>
-        <button
-            type="button"
-            class="btn btn-outline-primary btn-lg w-50 py-2 ms-2 color-btn_hover"
-            style="
-            font-size: 14px;
-            color: blue;
-            background-color: rgb(255, 255, 255);
-            "
-        >
-            <b>Thanh toán qua ATM</b> <br />
-            Giao hàng siêu tốc - hỗ trợ <br />kiểm hàng tại chổ
-        </button>
-        </div>
+         <form action="index.php?act=giohang" method="post">
+            <input type="hidden" name="id" value="<?=$id?>">
+            <input type="hidden" name="name" value="<?=$name?>">
+            <input type="hidden" name="anhsp" value="<?=$anhsp?>">
+            <input type="hidden" name="giaban" value="<?=$giaban?>">
+            <input type="hidden" name="giagoc" value="<?=$giagoc?>">
+
+
+            <div class="btn_mua d-flex">
+            <button
+                type="submit"
+                class="btn btn-primary btn-lg w-50 py-2"
+                style="font-size: 14px"
+                name="muangay"
+            >
+                Mua ngay Free-ship <br />
+                Kiểm tra hàng trước khi thanh toán
+            </button>
+            <button
+                type="submit"
+                class="btn btn-outline-primary btn-lg w-50 py-2 ms-2 color-btn_hover"
+                name="muangay"
+                style="
+                font-size: 14px;
+                color: blue;
+                background-color: rgb(255, 255, 255);
+                "
+            >
+                <b>Thanh toán qua ATM</b> <br />
+                Giao hàng siêu tốc - hỗ trợ <br />kiểm hàng tại chổ
+            </button>
+            </div>
+        </form>
 
         <!-- call mua hàng -->
         <div>
