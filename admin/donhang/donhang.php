@@ -399,7 +399,7 @@
               <tr>
                 <th>ID</th>
                 <th>Tên khách hàng</th>
-                <th>Số lượng sản phẩm</th>
+                <th>Địa chỉ</th>
                 <th>Tổng tiền</th>
                 <th>Ghi chú</th>
                 <th>Thời gian đặt hàng</th>
@@ -408,50 +408,66 @@
               </tr>
             </thead>
             <tbody>
-              <!-- Ví dụ thêm 15 dòng -->
-              <tr>
-                <td>001</td>
-                <td>Nguyễn Thanh Nam</td>
-                <td>12 sản phẩm</td>
-                <td style="color: green">400000 <span>VNĐ</span></td>
-                <td>Hàng rất tốt mình lại quay lại mua nữa nè</td>
-                <td>20/11/2025 8:25:47</td>
-                <td id="tinhtrang">Hoàn thành</td>
-                <td>
-                  <button class="btn_sua" onclick="toggleDetail()">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 576 512"
-                      width="15px"
-                      hight="15px"
-                      fill="white"
-                    >
-                      <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                      <path
-                        d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"
-                      />
-                    </svg>
-                    Chi tiết đơn hàng
-                  </button>
-                  <button class="btn_xoa">
-                    <a href="">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512"
-                        width="15px"
-                        hight="15px"
-                        fill="white"
-                      >
-                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path
-                          d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"
-                        />
-                      </svg>
-                      Xóa</a
-                    >
-                  </button>
-                </td>
-              </tr>
+              <?php
+                if(isset($list_donhang)&&(is_array($list_donhang))){
+                  foreach($list_donhang as $donhang){
+                    extract($donhang);
+                    $xoadh = "index.php?act=xoadh&id=".$id;
+                    $suadh = "index.php?act=show_dh&id=".$id;
+                    echo '
+                      <tr>
+                          <td>'.$id.'</td>
+                          <td>'.$name.'</td>
+                          <td>'.$diachi.'</td>
+                          <td style="color: green">'. number_format($tongtien, 0, ',', '.') .'<span> VNĐ</span></td>
+                          <td>'.$ghichu.'</td>
+                          <td>'.$create_at.'</td>
+                          <td id="tinhtrang">'.$tinhtrang.'</td>
+                          <td>
+                            <button class="btn_sua" name="showdh">
+                              <a href="'.$suadh.'">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 576 512"
+                                  width="15px"
+                                  hight="15px"
+                                  fill="white"
+                                >
+                                  <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                  <path
+                                    d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"
+                                  />
+                                </svg>
+                                Chi tiết đơn hàng
+                              </a>
+                            </button>
+                            <button class="btn_xoa">
+                              <a href="'.$xoadh.'">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 448 512"
+                                  width="15px"
+                                  hight="15px"
+                                  fill="white"
+                                >
+                                  <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                  <path
+                                    d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"
+                                  />
+                                </svg>
+                                Xóa</a
+                              >
+                            </button>
+                          </td>
+                        </tr>
+                    ';
+
+                  }
+                }else{
+                  echo 'không tồn tại đơn hàng';
+                }
+              ?>
+
             </tbody>
           </table>
         </div>
@@ -471,3 +487,39 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <!-- js của mình -->
     <script src="../js/js_admin/donhang.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+      // Lấy tất cả các thẻ <td> có id là 'tinhtrang'
+      const tinhtrangElements = document.querySelectorAll("td#tinhtrang");
+
+      tinhtrangElements.forEach(function (element) {
+        const value = parseInt(element.textContent.trim()); // Lấy giá trị và chuyển thành số nguyên
+
+        // Kiểm tra giá trị và thiết lập nội dung và màu sắc
+        switch (value) {
+          case 0:
+            element.textContent = "Hủy";
+            element.style.color = "red";
+            break;
+          case 1:
+            element.textContent = "Đang xử lý";
+            element.style.color = "orange";
+            break;
+          case 2:
+            element.textContent = "Đang gửi hàng";
+            element.style.color = "purple";
+            break;
+          case 3:
+            element.textContent = "Hoàn thành";
+            element.style.color = "green";
+            break;
+          default:
+            element.textContent = "Không xác định";
+            element.style.color = "black";
+            break;
+        }
+      });
+    });
+
+    </script>

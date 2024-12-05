@@ -72,6 +72,7 @@
                               value="'.$cart[5].'"
                               min="1"
                               max="100000000"
+                              name="soluong"
                               readonly
                             />
                             <button onclick="changeValue(this, +1)">+</button>
@@ -103,6 +104,7 @@
                 class="form-check-input"
                 type="radio"
                 name="gioitinh"
+                value="0"
                 checked
               />
               <label class="form-check-label" for="flexRadioDefault1">
@@ -114,6 +116,7 @@
                 class="form-check-input"
                 type="radio"
                 name="gioitinh"
+                value="1"
               />
               <label class="form-check-label" for="flexRadioDefault2">
                 Chị

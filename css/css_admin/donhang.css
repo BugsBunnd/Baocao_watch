@@ -50,17 +50,6 @@ header .main_menu ul li:nth-child(3) a {
 }
 
 /* ================================== Container chi tiết đơn hàng */
-.container_donhang .container_chitietdh {
-  max-width: 40%; /* Ban đầu chiều rộng là 0 */
-  height: auto;
-  background-color: rgb(240, 237, 237);
-  margin: auto;
-  border-radius: 8px;
-  margin-top: 0px;
-  margin-bottom: 10px;
-  transition: max-height 1s ease, max-width 1s ease; /* Thêm hiệu ứng chuyển đổi */
-  display: block;
-}
 
 .container_donhang .container_chitietdh {
   max-width: 0; /* Ban đầu ẩn */

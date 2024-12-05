@@ -11,6 +11,8 @@
     include "../model/pdo.php";
     include "../model/danhmuc.php";
     include "../model/sanpham.php";
+    include "../model/donhang.php";
+
     include "header.php";
     //controler
 
@@ -270,11 +272,34 @@
 
             // bang don hang
             case 'donhang':
+                $list_donhang = loadall_donhang();
                 include 'donhang/donhang.php';
                 break;
 
+            case 'xoadh':
+                if(isset($_GET['id']) && ($_GET['id']>0)){
+                    $id = $_GET['id'];
+                    delete_donhang($id);
+                }
+                $list_donhang = loadall_donhang();
+                include 'donhang/donhang.php';
+                break;
+
+
+
+            case 'show_dh':
+                if(isset($_GET['id']) && ($_GET['id']> 0)){
+                    $id = $_GET['id'];
+                    $donhang = get_donhang($id);
+                    $dhsanpham = loadall_dhsanpham($id);
+                }
+                include 'donhang/chitietdonhang.php';
+                break;
+
+
+
             
-            //đăn xuất
+            //đăng xuất
             case 'dangxuat':
                 include 'logout.php';
                 break;
