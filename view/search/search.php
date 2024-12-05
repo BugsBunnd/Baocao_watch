@@ -109,7 +109,7 @@
                     <!-- content -->
                     <div class="content_card">
                         <div class="name">
-                        <a href="">'.$name.'</a>
+                        <a href="'.$chitietsp.'">'.$name.'</a>
                         </div>
                             <div class="price">'. number_format($giaban, 0, ',', '.') .' đ</div>
                         <div class="last_price">
