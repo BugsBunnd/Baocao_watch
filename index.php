@@ -2,6 +2,7 @@
     include("model/pdo.php");
     include("model/view_index.php");
     include("model/chitietsanpham.php");
+    include("model/view_loaddanhmuc.php");
     include("model/search.php");
     include("view/header.php");
     if ((isset($_GET["act"])) && (($_GET["act"]))) {
@@ -9,22 +10,27 @@
         switch ($act) {
 
             case 'xuhuong':
+                $list_xuhuong = load_xuhuong();
                 include('view/xuhuong/xuhuong.php');
                 break;
 
             case 'nam':
+                $list_nam = load_nam();
                 include('view/nam/nam.php');
                 break;
             
             case 'nu':
+                $list_nu = load_nu();
                 include('view/nu/nu.php');
                 break;
 
             case 'luxury':
+                $list_luxury = load_luxury();
                 include('view/luxury/luxury.php');
                 break;
 
             case 'cucaocap':
+                $list_cucapcap = load_cucaocap();
                 include('view/cucaocap/cucaocap.php');
                 break;
             

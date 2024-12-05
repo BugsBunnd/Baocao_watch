@@ -123,263 +123,45 @@
         <div class="danhmuc">Cũ cao cấp</div>
       </div>
       <div class="container_splq">
-        <div class="card">
-          <!-- img card -->
-          <div class="img">
-            <img src="/WatchShop/img/watch_demo.webp" alt="đồng hồ" />
-          </div>
-          <!-- content -->
-          <div class="content_card">
-            <div class="name">
-              <a href="">Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)</a>
-            </div>
-            <div class="price">1.010.000đ</div>
-            <div class="last_price">
-              <div class="number_price">1.347.000₫</div>
-              <div class="percent">-25%</div>
-            </div>
+      <?php
+        
 
-            <div class="evaluate">
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <!-- img card -->
-          <div class="img">
-            <img src="/WatchShop/img/watch_demo.webp" alt="đồng hồ" />
-          </div>
-          <!-- content -->
-          <div class="content_card">
-            <div class="name">
-              <a href="">Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)</a>
-            </div>
-            <div class="price">1.010.000đ</div>
-            <div class="last_price">
-              <div class="number_price">1.347.000₫</div>
-              <div class="percent">-25%</div>
-            </div>
+        if (!empty($list_cucapcap) && is_array($list_cucapcap)){
+            foreach($list_cucapcap as $sanpham){
+            extract($sanpham);
+            $path_anh = "./uploads/".$anhsp;
+            $chitietsp= "index.php?act=chitietsanpham&id=".$id;
+            echo'
+                 <div class="card">
+                    <!-- img card -->
+                    <div class="img">
+                        <img src="'.$path_anh.'" alt="Ảnh đồng hồ" />
+                    </div>
+                    <!-- content -->
+                    <div class="content_card">
+                        <div class="name">
+                        <a href="'.$chitietsp.'">'.$name.'</a>
+                        </div>
+                            <div class="price">'. number_format($giaban, 0, ',', '.') .' VNĐ</div>
+                        <div class="last_price">
+                            <div class="number_price">' . number_format($giagoc, 0, ',', '.') . 'VNĐ</div>
+                        <div class="percent">-'.$tilegiam.'%</div>
+                        </div>
 
-            <div class="evaluate">
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                        <div class="evaluate">
+                        <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                        <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                        <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                        <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                        <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <!-- img card -->
-          <div class="img">
-            <img src="/WatchShop/img/watch_demo.webp" alt="đồng hồ" />
-          </div>
-          <!-- content -->
-          <div class="content_card">
-            <div class="name">
-              <a href="">Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)</a>
-            </div>
-            <div class="price">1.010.000đ</div>
-            <div class="last_price">
-              <div class="number_price">1.347.000₫</div>
-              <div class="percent">-25%</div>
-            </div>
-
-            <div class="evaluate">
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <!-- img card -->
-          <div class="img">
-            <img src="/WatchShop/img/watch_demo.webp" alt="đồng hồ" />
-          </div>
-          <!-- content -->
-          <div class="content_card">
-            <div class="name">
-              <a href="">Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)</a>
-            </div>
-            <div class="price">1.010.000đ</div>
-            <div class="last_price">
-              <div class="number_price">1.347.000₫</div>
-              <div class="percent">-25%</div>
-            </div>
-
-            <div class="evaluate">
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <!-- img card -->
-          <div class="img">
-            <img src="/WatchShop/img/watch_demo.webp" alt="đồng hồ" />
-          </div>
-          <!-- content -->
-          <div class="content_card">
-            <div class="name">
-              <a href="">Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)</a>
-            </div>
-            <div class="price">1.010.000đ</div>
-            <div class="last_price">
-              <div class="number_price">1.347.000₫</div>
-              <div class="percent">-25%</div>
-            </div>
-
-            <div class="evaluate">
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <!-- img card -->
-          <div class="img">
-            <img src="/WatchShop/img/watch_demo.webp" alt="đồng hồ" />
-          </div>
-          <!-- content -->
-          <div class="content_card">
-            <div class="name">
-              <a href="">Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)</a>
-            </div>
-            <div class="price">1.010.000đ</div>
-            <div class="last_price">
-              <div class="number_price">1.347.000₫</div>
-              <div class="percent">-25%</div>
-            </div>
-
-            <div class="evaluate">
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <!-- img card -->
-          <div class="img">
-            <img src="/WatchShop/img/watch_demo.webp" alt="đồng hồ" />
-          </div>
-          <!-- content -->
-          <div class="content_card">
-            <div class="name">
-              <a href="">Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)</a>
-            </div>
-            <div class="price">1.010.000đ</div>
-            <div class="last_price">
-              <div class="number_price">1.347.000₫</div>
-              <div class="percent">-25%</div>
-            </div>
-
-            <div class="evaluate">
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <!-- img card -->
-          <div class="img">
-            <img src="/WatchShop/img/watch_demo.webp" alt="đồng hồ" />
-          </div>
-          <!-- content -->
-          <div class="content_card">
-            <div class="name">
-              <a href="">Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)</a>
-            </div>
-            <div class="price">1.010.000đ</div>
-            <div class="last_price">
-              <div class="number_price">1.347.000₫</div>
-              <div class="percent">-25%</div>
-            </div>
-
-            <div class="evaluate">
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <!-- img card -->
-          <div class="img">
-            <img src="/WatchShop/img/watch_demo.webp" alt="đồng hồ" />
-          </div>
-          <!-- content -->
-          <div class="content_card">
-            <div class="name">
-              <a href="">Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)</a>
-            </div>
-            <div class="price">1.010.000đ</div>
-            <div class="last_price">
-              <div class="number_price">1.347.000₫</div>
-              <div class="percent">-25%</div>
-            </div>
-
-            <div class="evaluate">
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <!-- img card -->
-          <div class="img">
-            <img src="/WatchShop/img/watch_demo.webp" alt="đồng hồ" />
-          </div>
-          <!-- content -->
-          <div class="content_card">
-            <div class="name">
-              <a href="">Đồng Hồ Orient - Nam RA-AA0B02R39B (RA-AA0B02R19B)</a>
-            </div>
-            <div class="price">1.010.000đ</div>
-            <div class="last_price">
-              <div class="number_price">1.347.000₫</div>
-              <div class="percent">-25%</div>
-            </div>
-
-            <div class="evaluate">
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-              <i class="fa-solid fa-star" style="color: #ffd43b"></i>
-            </div>
-          </div>
-        </div>
+                ';
+            }
+        } else{
+            echo "Không có sản phẩm !!";
+        }
+        ?>
       </div>
     </div>
